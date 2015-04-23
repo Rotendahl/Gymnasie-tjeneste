@@ -1,0 +1,105 @@
+title: "Bevægelse og animationer #1"
+processing: enable
+category: processing
+slug: animation-1
+---
+
+For at kunne få noget til at bevæge sig, bliver vi nødt til at gentage
+den del der tegner igen og igen. Vi bliver derfor nødt til at skrive
+en <em>funktion</em> som kan kaldes hver gang vi skal tegne.
+
+Her er en funktion der tegner en cirkel ved muse-markørens placering:
+
+```javascript
+var draw = function () {
+  fill(0, 0, 0);
+  ellipse(mouseX, mouseY, 10, 10);
+};
+```
+
+Prøv at skrive det ind i editoren på KhanAcademy og se hvad der sker!
+<em>(Husk semikolonnet til sidst!)</em>
+
+Opgave 7
+--------
+Skriv et program der tegner en linje fra (0, 0) og hen til
+muse-markørens placering og bagefter en linje fra markøren hen til
+nederste højre hjørne.
+
+Opgave 8
+--------
+Dit program fra Opgave 7 tegner linjerne oven i hinanden, for at løse
+problemet skal du bruge <a
+href="https://www.khanacademy.org/cs/backgroundr-g-b/839653892">background()</a>-funktionen.
+
+Følg linket, læs dokumentationen og prøv at fikse problemet.
+
+Opgave 9
+--------
+Du skal nu få bilen til at følge muse-markøren's x-koordinat. 
+
+* Start med at sætte tegnekommandoerne ind i en draw-funktion.
+* Brug dernæst *mouseX* til at sætte *xpos* som styrer hvor på billedet bilen skal tegnes.
+* Brug background()-funktionen så baggrunden bliver ryddet
+
+Opgave 10
+---------
+Fortsæt hvor du slap i *Opgave 2* og *Opgave 4*:
+
+ * Indsæt al din kode ind i en "draw"-funktion
+ * Sæt et eller flere af koordinaterne til at bruge "mouseX" og
+   "mouseY". Flyt musen henover tegningen og se hvad der sker.
+
+
+### Eksempel:
+
+<script type="application/processing" data-processing-target="opgave5">
+  size(400, 400);
+  background(255);
+
+  draw = function () {
+    stroke(200+55*random(), 160+random()*50, 0)
+
+    line(0,0,mouseX,mouseY);
+    line(width,0,mouseX,mouseY);
+    line(0,height,mouseX,mouseY);
+    line(width,height,mouseX,mouseY);
+  }
+</script>
+<canvas id="opgave5" class="processing-example-canvas"></canvas>
+
+
+Opgave 11
+---------
+Prøv nu at tegne en baggrundsfarve bag ved stregerne, så de gamle
+streger ikke bevares.
+
+### Eksempel:
+
+<script type="application/processing" data-processing-target="opgave6">
+  size(400, 400);
+
+  draw = function () {
+    background(255);
+    stroke(255,160,0);
+    strokeWeight(100);
+    line(0,0,mouseX,mouseY);
+
+    stroke(0,0,200);
+    strokeWeight(20);
+    line(0,0,mouseX,mouseY);
+
+
+    stroke(200,0,200);
+    strokeWeight(50);
+    line(0,height,mouseX,mouseY);
+    stroke(0,0,200);
+    strokeWeight(20);
+    line(0,height,mouseX,mouseY);
+  }
+</script>
+<canvas id="opgave6" class="processing-example-canvas"></canvas>
+
+<div class="next">
+Næste emne: <a href="processing/animation-2.html">Animation #2</a>
+</div>

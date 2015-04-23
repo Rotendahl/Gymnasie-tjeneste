@@ -1,0 +1,66 @@
+title: Efter praktikken
+processing: enable
+slug: videre
+---
+
+Når du kommer hjem efter praktikken, vil jeg foreslå dig at arbejde
+videre på egen hånd. Jo bedre man bliver jo sjovere og mere
+imponerende ting kan man programmere sig frem til!
+
+Jeg vil anbefale dig at starte med de forskellige guides på
+KhanAcademy's "Computer Science" sektion:
+<https://www.khanacademy.org/cs> som også brugger Processing.js
+
+Brug også noget tid på at se hvad andre har brugt Processing til:
+<http://www.khanacademy.org/cs/browse/all-programs> og forsøg at læse
+deres kode. Man kan tit lære rigtig meget af at se hvordan andre har
+gjort!
+
+Efter KhanAcademy
+-----------------
+
+KhanAcademy bruger samme sprog som vi har gjort, *Processing.js*. Det
+kan du selvfølgelig have en hel masse sjov med, men hvis du vil lave
+programmer der ikke kun kører i browseren, vil jeg anbefale dig også
+at lære en anden variant af *Processing*, den oprindelige. Sproget ser
+en lille smule anderledes ud, men til gengæld er der et væld af
+undervisningsmateriale der bruger denne variant.
+
+For at lære Processing (uden .js) skal du installere programmet som kan hentes
+her: <https://processing.org/> og der er en række videoer her der kan sætte dig i gang:
+<https://www.youtube.com/playlist?list=PL374E5107CB62B2BE>
+
+### Naturvidenskab
+
+Hvis du har gennemført opgaverne i 
+[Natural Simulation-sektionen](https://www.khanacademy.org/computing/cs/programming-natural-simulations)
+på KhanAcademy, og har lyst til at lære mere, så er
+der en hel bog om emnet "The Nature of Code" af Daniel
+Shiffman. Den findes gratis på <http://natureofcode.com/> og der er tilhørende videoer på <http://vimeo.com/channels/natureofcode>
+
+**Bemærk:** I bogen bruges *Processing (Java)* ikke *Processing.js
+(JavaScript)*. >
+
+
+<canvas data-processing-sources="processing-examples/NatureOfCode_6_09_Flocking.pde processing-examples/NatureOfCode_6_09_Flock.pde processing-examples/NatureOfCode_6_09_Boid.pde">
+<p>Your browser does not support the canvas tag.</p>
+</canvas>
+
+
+### Generativt design
+
+Hvis du hellere vil lave flotte visualiseringer end simulering af
+naturen kan du tage et kig på eksemplerne her:
+http://www.generative-gestaltung.de/code
+
+Der findes en bog der hører til hjemmesiden ["Generative Design:
+Visualize, Program, and Create with
+Processing"](http://www.amazon.com/Generative-Design-Visualize-Program-Processing/dp/1616890770)
+der forklarer hvordan du selv programmerer alle eksemplerne.
+
+**Bemærk:** I bogen bruges *Processing (Java)* ikke *Processing.js
+(JavaScript)*.
+
+<canvas data-processing-sources="processing-examples/GenerativeDesign_P_2_2_2_02.pde">
+<p>Your browser does not support the canvas tag.</p>
+</canvas>

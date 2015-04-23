@@ -1,0 +1,79 @@
+title: Variable
+processing: enable
+category: processing
+slug: variable
+---
+
+Opgave 5
+--------
+*Til denne opgave skal du ikke bruge variable.*
+
+Flyt bilen fra *Opgave 1* og *Opgave 3* helt hen i venstre side af
+ billedet ved at ændre på koordinaterne (de første to argumenter til
+ *rect()* og *ellipse()*).
+
+<script type="application/processing" data-processing-target="moveCarLeft">
+  noLoop();
+  size(400, 200);
+  background(255);
+  var y = 30+height/2;
+  noStroke();
+  fill(200,0,0);
+  rect(40, y-50, 100, 50);
+  rect(0, y-20, 200, 25);
+  fill(0,0,0);
+  ellipse(40, y, 25, 25);
+  ellipse(140, y, 25, 25);
+</script>
+<canvas id="moveCarLeft" class="processing-example-canvas"></canvas>
+
+Introduktion til variable
+-------------------------
+Før du kan få dine figurer sat i bevægelse, har du brug for at lære om
+et nyt koncept: *variable*.
+
+Nogle gange har vi brug den samme værdi mange steder, i stedet for at
+gentage de samme tal over det hele, kan vi gemme denne værdi i en
+variabel, så vi kun skal ændre et sted hvis vi beslutter os for noget
+andet.
+
+Her gemmer jeg tallet 100 i en variabel med navnet 'xpos':
+
+```javascript
+var xpos = 100;
+```
+
+Variablen kan så bruges flere steder i programmet i stedet for et af
+tallene:
+
+```javascript
+ellipse(xpos,100, 25,25);
+rect(xpos, 0, 25,25);
+```
+
+Opgave 6
+--------
+
+ * Introducer variablen "xpos" ved at tilføje linjen: ``var xpos = 100;``
+ * Læg variablen til alle x-koordinateterne (første argument til
+   *rect()* og *ellipse()*)
+ * Prøv at ændre på *xpos* og se bilen flytte sig
+
+<script type="application/processing" data-processing-target="moveWithVar">
+  noLoop();
+  size(400, 200);
+  background(255);
+  var y = 30+height/2;
+  noStroke();
+  fill(200,0,0);
+  rect(240, y-50, 100, 50);
+  rect(200, y-20, 200, 25);
+  fill(0,0,0);
+  ellipse(240, y, 25, 25);
+  ellipse(340, y, 25, 25);
+</script>
+<canvas id="moveWithVar" class="processing-example-canvas"></canvas>
+
+<div class="next">
+Næste emne: <a href="processing/animation-1.html">Animation #1</a>
+</div>

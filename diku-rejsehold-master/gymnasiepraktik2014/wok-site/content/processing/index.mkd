@@ -1,0 +1,46 @@
+title: Processing.js øvelser
+processing: enable
+slug: processing
+url: processing.html
+---
+
+Da man ikke kan nå så meget på en enkelt dag, har vi valgt at
+introducere jer til et programmeringssprog hvor I selv kan arbejde
+videre på egen hånd, da der er massere af undervisningsmateriale at gå
+videre med.
+
+
+Processing.js opgaverne herunder står ikke alene &mdash; de skal ledsages
+af undervisning i koncepterne. Nederst på siden gives forslag til hvor
+man kan lære mere på egen hånd.
+
+Brug editoren på <a
+href="http://khanacademy.org/cs/new/pjs">khanacademy.org/cs/new/pjs</a>
+(opret en bruger for at kunne gemme).
+
+<h2>Opgaver og eksempler</h2>
+<ul>
+  <li><a href="processing/figurer.html">Del 1: Figurer</a></li>
+  <li><a href="processing/farver.html">Del 2: Farver</a></li>
+  <li><a href="processing/variable.html">Del 3: Variable</a></li>
+  <li><a href="processing/animation-1.html">Del 4: Bevægelse og animation #1</a></li>
+  <li><a href="processing/animation-2.html">Del 5: Bevægelse og animation #2</a></li>
+  <li><a href="processing/randomness.html">Del 6: Tilfældighed</a></li>
+  <li><a href="processing/montecarlo-pi.html">Eksempel: Beregning af π</a></li>
+  <li><a href="processing/urskive.html">Eksempel: Analogt ur</a></li>
+</ul>
+
+<h2>Break-out!</h2>
+*Brug musen til at styre.* [Lav et Spin-off på KhanAcademy](https://www.khanacademy.org/computer-programming/break-out/4956612056055808)
+
+<canvas data-processing-sources="processing-examples/BreakOut.js" class="processing-example-canvas">
+<p>Your browser does not support the canvas tag.</p>
+</canvas>
+
+<h2>Funky cirkler! </h2>
+*Eksempel fra <a href="http://processingjs.org/learning/basic/distance2d/">Processingjs.org</a>*
+
+<canvas data-processing-sources="processing-examples/Distance2D.js" class="processing-example-canvas" style="border: 0;">
+<p>Your browser does not support the canvas tag.</p>
+</canvas>
+

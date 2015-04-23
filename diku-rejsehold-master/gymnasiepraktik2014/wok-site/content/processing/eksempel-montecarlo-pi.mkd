@@ -1,0 +1,140 @@
+title: "Større eksempel: Beregn π via tilfældige tal"
+processing: enable
+mathjax: enable
+category: processing
+slug: montecarlo-pi
+---
+Vi kan udnytte formlerne for arealet af en cirkel og arealet af et
+kvadrat til at beregne $\pi$:
+
+$$Arealet\ af\ en\ cirkel = \pi r^2$$
+
+$$Arealet\ af\ et\ kvadrat = s^2$$
+
+
+For at gøre det skal vi kigge på en cirkel indskrevet i et
+kvadrat, hvor cirklens radius er $r$:
+
+<canvas id="inscribed-circle" class="processing-example-canvas" style="border:0;"></canvas>
+<script type="text/processing" data-processing-target="inscribed-circle">
+  noLoop();
+  var r = 100;
+  size(2*r+2,2*r+2);
+  background(255);
+  strokeWeight(2);
+  stroke(000);
+
+  rect(1,1,r*2,r*2);
+
+  stroke(255,0,0);
+  ellipse(1+r,1+r,r*2,r*2);
+
+  stroke(0,160,160);
+  line(r+1, r+1, 2*r+1, r+1);
+
+  fill(0,0,0);
+  textSize(18);
+  text("r", 150, 90);
+</script>
+
+Arealet af kvadratet kan nu beregnes ud fra radiusen:
+
+  $$Areal\ af\ kvadratet = s^2 = (2r)^2 = 4r^2$$
+
+
+Lad os nu lege at vi er på en skydebane og skyder helt tilfældigt inde
+for *kvadratet*. Du forsøger ikke at ramme inde i eller uden for
+cirklen, men rammer bare helt tilfældigt over hele kvadratet:
+
+<canvas id="random-shots" class="processing-example-canvas" style="border:0;"></canvas>
+<script type="text/processing" data-processing-target="random-shots">
+  var r = 101; 
+  size(2*r,2*r);
+  background(255);
+  strokeWeight(2);
+  stroke(000);
+  rect(1,1,200,200);
+
+  stroke(255,0,0);
+  ellipse(r,r,200,200);
+
+  stroke(0,0,0);
+  draw = function () {
+    var x = random(0,2*r);
+    var y = random(0,2*r);
+    point(x,y);
+  }
+</script>
+
+Hvis du gør det i lang nok tid vil forholdet mellem antal skud der
+rammer ind i cirklen og antal skud uden for cirklen blive lig med
+forholdet mellem arealet af cirklen og arealet af kvadratet:
+
+$$\frac{Skud\ i\ cirklen}{Skud\ i\ alt} = \frac{Arealet\ af\ cirklen}{Arealet\ af\ kvadratet}$$
+
+Lad os prøve at indsætte formlerne ovenfor:
+
+$$\frac{Skud\ i\ cirklen}{Skud\ i\ alt} =  \frac{\pi*r^2}{4r^2} = \frac{\pi}{4}$$
+
+Gang med 4:
+
+$$\frac{4 * Skud\ i\ cirklen}{Skud\ i\ alt} =  \frac{4\pi}{4} = \frac{\pi}{4}$$
+
+Vi har nu en formel der kan bruges til at udregne $\pi$! Jo flere skud, jo bedre resultat!
+
+
+Opgave 17
+---------
+
+Nedenfor er et program der sætter tilfældige punkter inde i et
+kvadrat. Kopier programmet ind i KhanAcademy-editoren og tilføj en
+betingelse i *draw*-funktionen der afgører om et punkt er inde i en
+cirkel eller uden for en cirkel og tæller antal *hits* op.
+
+Afgørelsen kan træffes ved at mål afstanden fra centrum til punktet og
+se om afstanden er mindre end cirklens radius. Brug afstandsformlen:
+
+<p>$$|AB| = \sqrt{(x_B - x_A)^2 + (y_B - y_A)^2}$$</p>
+
+Hvis man f.eks. vil finde afstanden mellem punkterne (1,2) og (5,3) er den
+$$|AB|=\sqrt{(5-1)^2+(3-2)^2}=\sqrt{16+1}=\sqrt{17}\approx4,123$$
+
+
+### Koden du skal rette:
+
+```javascript
+// Radius
+var r = 200;
+
+// Tællere
+var total = 0;
+var hits = 0;
+
+strokeWeight(3);
+noFill();
+ellipse(r,r,2*r,2*r);
+
+draw = function() {
+    // Vælg et tilfældigt punkt i kvadratet
+    var x = random(0,2*r);
+    var y = random(0,2*r);
+    stroke(0,0,0);
+    point(x,y);
+    total = total + 1;
+
+    // TILFØJ DIN KODE HER
+    // if (inde i cirklen) {
+    //    læg en til "hits"-variablen
+    // }
+
+    // Estimér pi ud fra antal hits i cirklen
+    var pi_estimate = 4*(hits/total);
+
+    // Opdater tekst-felt
+    noStroke();
+    fill(255, 255, 255);
+    rect(0,0,200,30);
+    fill(0, 0, 0);
+    text("pi estimat: " + pi_estimate, 10, 20);
+};
+```

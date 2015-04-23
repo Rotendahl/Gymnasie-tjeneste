@@ -1,0 +1,55 @@
+title: "Større eksempel: Analogt Ur"
+processing: enable
+category: processing
+slug: urskive
+---
+
+<script type="application/processing" data-processing-target="opgavePi">
+size(400,400);
+strokeWeight(3);
+stroke(255);
+fill(100);
+
+
+// Centrum af tegningen
+var xCentrum = width / 2;
+var yCentrum = height / 2;
+
+// Radius på urskiven
+var radius = 0.7*min(xCentrum, yCentrum);
+
+// Længder på viserne som procentdel af radius
+var timeLaengde   = radius * 0.5;
+var minutLaengde  = radius * 0.8;
+var sekundLaengde = radius * 0.9;
+
+var tegnViser = function(rotation, laengde) {
+    // Udregn spidsen af viseren
+    var xSpids = xCentrum + Math.cos(rotation * 2 * Math.PI - Math.PI/2) * laengde;
+    var ySpids = xCentrum + Math.sin(rotation * 2 * Math.PI - Math.PI/2) * laengde;
+    line(xCentrum, yCentrum, xSpids, ySpids);
+};
+
+draw = function() {
+    background(0,0,0);
+    ellipse(xCentrum, yCentrum, 2 * radius , 2 * radius);
+    
+    // Hvor mange procent af et minut er der gået?
+    var sekundArm = second() / 60;
+
+
+    // Hvor mange procent af en time er der gået?
+    var minutArm = minute() / 60 +
+                   second() / (60 * 60);
+
+    // Hvor mange procent af et halvt døgn er gået?
+    var timeArm = (hour() % 12) / 12 +
+                  minute() / (12 * 60);
+
+    // Tegn visere
+    tegnViser(sekundArm, sekundLaengde);
+    tegnViser(minutArm, minutLaengde);
+    tegnViser(timeArm, timeLaengde);
+};
+</script>
+<canvas id="opgavePi" class="processing-example-canvas"></canvas>
