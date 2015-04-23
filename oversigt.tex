@@ -7,8 +7,8 @@
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \usepackage[utf8]{inputenc} % Implementere Unicode
     \usepackage[T1]{fontenc}    % Unicode skrifttype, fx. é skrives som 1 tegn
-    \usepackage[english]{babel} % Engelsk Ordbog
-  % \usepackage[danish]{babel}  % Dansk Ordbog
+ %    \usepackage[english]{babel} % Engelsk Ordbog
+   \usepackage[danish]{babel}  % Dansk Ordbog
     \usepackage{microtype}      % Forbedre linjeombrydningen
     \usepackage{libertine}      % Skrifttype
     \usepackage[scaled=0.83]{inconsolata} % Skrifttype til kode til kode
@@ -128,6 +128,9 @@
     \author{
       \Large{Benjamin Rotendahl - XMT224}
       \\ \texttt{Bero@di.ku.dk} \\
+    %  \Large{Arinbjörn Brandsson - Arbr@di.ku.dk }
+    %\Large{Benjamin Rotendahl - Bero@di.ku.dk }
+    %\Large{Mathias Fleig Mortensen - Mamo@di.ku.dk }
     }
 
     \date{
@@ -170,93 +173,131 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Introduktion}
-    Dette dokument stammer fra gymnasie tjensten fra
-    Datalogisk Institut ved København Universitets (DIKU)
+    Vi repræsenterer gymnasietjenesten fra
+    Datalogisk Institut ved København Universitet (DIKU)
 
-    Gymnasie tjenesten formål er at få flere studerende til at vælge en IT-uddannelse,
-    eller en kombinationsuddannelse af IT og et andet fag og
-    skabe en interesse for datalogi.
+    Gymnasietjenestens formål er at få flere studerende til at vælge en
+    IT-uddannelse, eller en kombinationsuddannelse af IT sammen med et andet fag
+    og skabe en interesse for datalogi.
 
-    Vores plan for at nå dette mål er at udvikle udervisningsforløber til gymnasie klasser
-    der giver en introduktion til datalogi. Disse forløb vil vi i gymnasie tjenesten rejse
-    rundt og gennemføre med eleverne i undervisningstimerne.
+    Vores plan for at nå dette mål er at udvikle undervisningsforløb til
+    gymnasieklasser der giver en introduktion til datalogi. Disse forløb vil
+    gymnasietjenesten tilbyde at rejse rundt med og overtage undervisningen i et
+    par timer.
 
-    Vi estimerer at sådan et forløb ville tage cikra 6 skoletimer, der afvikles over 3 uger,
-    med to timers undervisnings per uge.
+    Vi estimerer at sådan et forløb ville tage cirka 6 skoletimer, der afvikles over 3 uger,
+    med to timers undervisning per uge. Denne tidsgrænse er dog meget åben og kan tilpasses
+    til hvert forløb.
 
-    Forløbet ekisterer i to versioner, et til klasser med en form for IT-fag,
-    og et forløb til klasser uden IT-fag.
+    Forløbet eksisterer i to versioner: et til klasser med en form for IT-fag,
+    og et til klasser uden.
 
-    Vi er stadig i udviklingsfasen af disse forløb, og sætter derfor stor pris på respons
-    fra gymnasielærer.
+    Vi er stadig i udviklingsfasen af disse forløb, og vil derfor sætte stor
+    pris på feedback fra dig.
 
-\section{Forløbet for ITfag. }
+\section{Forløb for IT-klasser}
+    Vi har haft svært ved at finde en undervisningsbeskrivelse af diverse
+    programmeringsfag i gymnasiet. Dette betyder at vi er stærkt interesseret i
+    at finde niveauet for f.eks en HTX klasse med programmering som fag så vi
+    kan tilrettelægge vores forløb efter deres evner.
+    \begin{enumerate}
+        \item \underline{Uge - Introduktion til data analyse} ~ \\
+        Fremvisning af de forskellige teknikker, 'sjov' demonstration og
+        forklaring af den algoritme der passer bedst til deres forsøgsdata.
+        \item \underline{Uge - Introduktion til python og algortimer} ~ \\
+        Vi laver nogle python opgaver der skal løses for at gøre eleverne komfortable med
+        med sproget python, samtidigt med at vi giver en introduktion til algoritmer.
+        \item \underline{Uge - Kombination af data analyse og python via
+        Machine Learning} ~ \\
+        I denne uge skal eleverne kombinere deres viden fra de forgående uger
+        og lave et program der benytter sig af machine learning til at forudsige
+        nye data.
 
 
-\section{Forløbet for kombinationsfag}
-    I tilfælde af kombinationsfag kan vi ikke bruge den samme tilgang som
-    til ITfag grundet manglende erfaring indenfor programmering. Vi vil derfor
-    give kombinationsfagene mulighed for at udnytte deres egen data fra et tidligere
-    eller igangværende projekt til data analyse.
-    Hvis eleverne ikke har data til rådighed, stiller vi data med data eksempler inden
-    for deres studieretningsfag.
+
+    \end{enumerate}
+
+
+    \subsection*{Uge 1}
+        I den første uge vil vi introducere eleverne til forskellige teknikker
+        indenfor naturvidenskab til at analysere data. Til dette formål kan der
+        enten blive tilsendt data til os som de studerende har arbejdet med forinden
+        (for eksempel i forbindelse med et eksperiment) som vi kan undervise de
+        studerende i hvordan man kan få nyt information ud af,
+        eller vi kan selv komme med noget data som eleverne kan arbejde med.
+        Her vil vi gå i dybden med én teknik (for eksempel K-means neighbor)
+        som har speciel relevans for den pågældende data. Her vil vi også forklare
+        hvad en algoritme er, samt give en forklaring på hvordan den
+        pågældende algoritme ser ud og fungerer. Til slut vil vi give de
+        studerende nogle små øvelser i ``python notebooks'' som demonstrerer
+        hvordan teknikkerne fungerer.
+
+    \subsection*{Uge 2}
+        I uge 2 vil vi lave python øvelser med eleverne, vi forstiller os at de allerede
+        har evner inden for basal programmering
+        (variabler, data-typer, løkker, if/else betingelser, funktioner).
+        Disse øvelser giver en intuitiv forståelse af algortimik og køretid
+        , f.eks forskellen på linær søgning og binær søgning, implementering af sotering algoritmer.
+
+    \subsection{Uge 3}
+        I den sidste uge vil vi lade de studerende demonstrere deres nye vide
+    n ved at implementere den data analyse teknik som vi snakkede om i den første uge via machine learning. Vi vil give dem en skabelon som viser hvad strukturen af deres endelige kode skal se ud, med blanke linjer som de skal udfylde. Her vil vi tilbyde nogle forskellige sværhedsgrader (nem, middel og svær) hvor den nemme er for det meste fyldt ud i vores skabelon, mens den sværeste sværhedsgrad har mange manglende linjer kode som eleven skal udfylde. De studerende der hurtigt klarer sig igennem dette kan derefter arbejde på nogle mindre opgaver som vi har tilberedt.
+
+\section{Forløb for ikke IT-klasser}
+    Vi vil give eleverne en introduktion til data analyse som datalogisk disiciplin, og
+    vise hvordan programmering kan bruges til at behandle data.
 
     Forløbet er
     \begin{enumerate}
-        \item \unnderline{uge - Introduktion til data analyse} ~ \\
+        \item \underline{Uge - Introduktion til data analyse} ~ \\
         Fremvisning af de forskellige tekniker, 'sjov' demostration og forklaring af den
-        algortime der passer bedst til deres forsøgsdata.
-        Eleverene arbejder med ``python notebooks'' som er et modificertbart
-        undervisningsværktøj til python der ikke kræver installation, hvori der gennemgåes
-        øvelser i data analyse
+        algortime der passer bedst til det valgte data.
 
+        \item \underline{Uge - Introduktion til python og programmering} ~ \\
+        Der gennemgåes en introduktion til python hvor eleverne lærer basal programmering
+        (variabler, data-typer, løkker, if/else betingelser, funktioner)
 
-        \item \unnderline{uge - Introduktion til python og programmering} ~ \\
-        Der gennemgåes en python en python notebook hvor eleverne introduceres til
-        basal programmering, (variabler, data-typer, løkker, if/else betingelser, funktioner)
-
-
-        \item \unnderline{uge - Kombination af data analyse og python} ~ \\
+        \item \unnderline{Uge - Kombination af data analyse og python} ~ \\
         Eleverne skal nu sammensætte deres nye viden inden for data analyse og programmering
-        og selv implementere en algortime hvor vi har givet en skabalon der indeholder
-        programmets struktur.
+        og selv implementere en algortime hvor vi har givet en skabalon der hjælper
+        eleven på vej.
     \end{enumerate}
 
-    \subsection{Uge 1}
-        I den første uge vil vi introducere eleverne til forskellige teknikker 
-        indenfor naturvidenskab til at analysere data. Til dette formål kan der 
-        enten blive tilsendt data til os som de studerende har arbejdet med forinden 
-        (for eksempel i forbindelse med et eksperiment) som vi kan undervise de 
-        studerende i hvordan man kan få nyt information ud af, 
-        eller vi kan selv komme med noget data som eleverne kan arbejde med. 
-        Her vil vi gå i dybden med én teknik (for eksempel K-means neighbor) 
-        som har speciel relevans for den pågældende data. Her vil vi også forklare 
-        hvad en algoritme er, samt give en forklaring på hvordan den 
-        pågældende algoritme ser ud og fungerer. Til slut vil vi give de 
-        studerende nogle små øvelser i ``python notebooks'' som demonstrerer 
+    \subsection*{Uge 1}
+        I den første uge vil vi introducere eleverne til forskellige teknikker
+        indenfor naturvidenskab til at analysere data. Til dette formål kan der
+        enten blive tilsendt data til os som de studerende har arbejdet med forinden
+        (for eksempel i forbindelse med et eksperiment) som vi kan undervise de
+        studerende i hvordan man kan få nyt information ud af,
+        eller vi kan selv komme med noget data som eleverne kan arbejde med.
+        Her vil vi gå i dybden med én teknik (for eksempel K-means neighbor)
+        som har speciel relevans for den pågældende data. Her vil vi også forklare
+        hvad en algoritme er, samt give en forklaring på hvordan den
+        pågældende algoritme ser ud og fungerer. Til slut vil vi give de
+        studerende nogle små øvelser i ``python notebooks'' som demonstrerer
         hvordan teknikkerne fungerer.
-       
-    \subsection{Uge 2}
-        I den anden uge vil vi introducere eleverne til basal programmering. Da 
-        vi regner med at de studerende ikke har prøvet at programmere før 
-        vil vi undervise dem i python, som er et nemt og tilgivende 
-        programmeringssprog for nybegyndere. Vi vil introducere dem til hvad 
-        variabler, data-typer, løkker, betingelser og funktioner er, og give 
-        dem små opgaver designet til at få dem langsomt introduceret til 
-        dette. Målet ved denne uge er ikke at gøre dem til  
-        programmører, men blot til at give dem en idé om hvad programmering er, 
+
+    \subsection*{Uge 2}
+        I den anden uge vil vi introducere eleverne til basal programmering. Da
+        vi regner med at de studerende ikke har prøvet at programmere før
+        vil vi undervise dem i python, som er et nemt og tilgivende
+        programmeringssprog for nybegyndere. Vi vil introducere dem til hvad
+        variabler, data-typer, løkker, betingelser og funktioner er, og give
+        dem små opgaver designet til at få dem langsomt introduceret til
+        dette. Målet ved denne uge er ikke at gøre dem til
+        programmører, men blot til at give dem en idé om hvad programmering er,
         samt hvad det kan bruges til.
-         
-    \subsection{Uge 3}
-        I den sidste uge vil vi lade de studerende demonstrere deres nye viden 
-        ved at implementere den data analyse teknik som vi snakkede om i den 
-        første uge. Vi vil give dem en skabelon som viser hvad strukturen af 
-        deres endelige kode skal se ud, med blanke linjer som de skal udfylde. 
-        Her vil vi tilbyde nogle forskellige sværhedsgrader (nem, middel og svær) 
-        hvor den nemme er for det meste fyldt ud i vores skabelon, mens den 
-        sværeste sværhedsgrad har mange manglende linjer kode som eleven skal 
-        udfylde. De studerende der hurtigt klarer sig igennem dette kan derefter 
+
+    \subsection*{Uge 3}
+        I den sidste uge vil vi lade de studerende demonstrere deres nye viden
+        ved at implementere den data analyse teknik som vi snakkede om i den
+        første uge. Vi vil give dem en skabelon som viser hvad strukturen af
+        deres endelige kode skal se ud, med blanke linjer som de skal udfylde.
+        Her vil vi tilbyde nogle forskellige sværhedsgrader (nem, middel og svær)
+        hvor den nemme er for det meste fyldt ud i vores skabelon, mens den
+        sværeste sværhedsgrad har mange manglende linjer kode som eleven skal
+        udfylde. De studerende der hurtigt klarer sig igennem dette kan derefter
         arbejde på nogle mindre opgaver som vi har tilberedt.
-  
+
 
 \end{document}
