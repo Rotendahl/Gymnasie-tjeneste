@@ -1,2 +1,4 @@
+*.synctex.*
+latexOut/
 *.swp
 .DS_Store
