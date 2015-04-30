@@ -1,4 +1,6 @@
 *.synctex.*
 latexOut/
 *.swp
+*.log
+*.aux
 .DS_Store
