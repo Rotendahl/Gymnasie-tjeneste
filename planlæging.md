@@ -1,15 +1,21 @@
+# TODO next time
+======
+## SRP 
+* Tjek formatet for DTU SRP workshop 
+* Kontakt Jes Andersen om SRP workshop sammen med Kemi.
+* Konkakt Anders Munck Jensen med programmeringsklasse  
+* Kontakt sukkertoppen (De sidder økonomisk sammen med vibenhus)
 
-# Åbne spørgsmål til læren.
-===========
-* Hvor mange timer
-* Evner inden for datalogi?
+# Evt
+======
+* Processing fra dybber til Informations teknologi klasser
+* Snak med Mathias Theis og Søren Dalgård der har erfraing med undervisning for ATU
+* Server og Domæne fra Inge 
+* Lav fagpakker 
+* Tag ud. 
 
 
 
-# Todo
-=======
-* Find pensum for en it klasse.
-* Kontakt lærer
-* SRP udvikling af materiale (få krav fra Hedi)
-* Find penge til server
-* Opret server
+
+
+
