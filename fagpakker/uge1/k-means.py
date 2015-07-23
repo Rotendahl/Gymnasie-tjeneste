@@ -4,6 +4,9 @@ from datetime import datetime
 import matplotlib.pyplot as plt
 
 
+n
+
+
 """ This function takes the attributes and a table
         both in the form  of a string, and returns an array
         containg tuples with the rows from the database
@@ -17,11 +20,11 @@ def selectFrom(attributes, table):
                 return data
 
 """ This sql statement returns all x values for galaxies """
-filterGalaxy = "((SELECT id FROM Objects_Train_Y WHERE y=0) NATURAL JOIN Objects_Train_X)" 
+filterGalaxy = "((SELECT id FROM Objects_Train_Y WHERE y=0) NATURAL JOIN Objects_Train_X)"
 
 """ We transpose X such that we have x = (val1,val2,val3,val4,val5, ..., valN), where val
 	is a colum vector.
-""" 
+"""
 x = np.matrix(selectFrom(" x0, x1, x2, x3, x4, x5, x6, x7, x8, x9 ", filterGalaxy)).T
 
 """ This method taxes a matrix consisting of colum vectors and returns the average colum """
@@ -37,11 +40,11 @@ def calMean(data):
 """
 def calCovariance(data, mean):
  	size = len(data.T)
-	covarianceMatrix = (data[:,[0]] - mean) * (data[:,[0]] - mean).T 
+	covarianceMatrix = (data[:,[0]] - mean) * (data[:,[0]] - mean).T
 	for i in range(1, size):
 		covarianceMatrix  += (data[:,[i]] - mean) * (data[:,[i]] - mean).T
 	return covarianceMatrix /size
- 
+
 
 
 """ Takes a matrix and returns an array containg [eigenValues,matrix(eigenVectores)].
@@ -115,7 +118,7 @@ def quotient(eigenValues, p):
 	return m -1
 
 eigen = EigenSort(calCovariance(x, calMean(x)))
-eigenValues = eigen[0]		 
+eigenValues = eigen[0]
 print ("To explain 90%  of the variance we need the first", quotient(eigenValues, 90),
  "princibal compontents")
 
@@ -144,7 +147,7 @@ def scatterPlot ():
 	the sqauard Euclidean distanse as a float
 """
 
-def distance (xi,xj): 
+def distance (xi,xj):
 	dist = 0.0
 	xi = xi.A1.tolist()
 	xj = xj.A1.tolist()
@@ -156,15 +159,15 @@ def distance (xi,xj):
 
 """ Takes two centers places x values and returns two better centers
 """
-def clusterMean(center1, center2):	
+def clusterMean(center1, center2):
 	cluster1 = []
 	cluster2 = []
-	
+
 	for i in range (0, len(x)):
 		distC1 = distance(x[:,[i]], center1)
 		distC2 = distance(x[:,[i]], center2)
 		if(distC2 < distC1):
-			cluster2.append((x[:,[i]]).A1.tolist()) 
+			cluster2.append((x[:,[i]]).A1.tolist())
 		else:
 			cluster1.append((x[:,[i]]).A1.tolist())
 	return [calMean(np.matrix(cluster1).T), calMean(np.matrix(cluster2).T)]
@@ -183,9 +186,9 @@ def relocate():
 		newCenter1 = new[0]
 		newCenter2 = new[1]
 		if(distance(oldCenter1, newCenter1) < 0.2 and distance(oldCenter2, newCenter2) < 0.2 ):
-			convergance = True 
+			convergance = True
 		else :
-			oldCenter1 = newCenter1 
+			oldCenter1 = newCenter1
 			oldCenter2 = newCenter2
 	return [oldCenter1,oldCenter2]
 
@@ -194,12 +197,12 @@ def relocate():
 def clusters(center1, center2):
 	cluster1 = []
 	cluster2 = []
-	
+
 	for i in range (0, len(x)):
 		distC1 = distance(x[:,[i]], center1)
 		distC2 = distance(x[:,[i]], center2)
 		if(distC2 < distC1):
-			cluster2.append((x[:,[i]]).A1.tolist()) 
+			cluster2.append((x[:,[i]]).A1.tolist())
 		else:
 			cluster1.append((x[:,[i]]).A1.tolist())
 	return [cluster1,cluster2]
@@ -219,7 +222,7 @@ def scatterPlotWithCenter ():
 	data = model(x,2).tolist()
 	x1 = []
 	x2 = []
-	print "The center for cluster one is ", c1x, c1y, 
+	print "The center for cluster one is ", c1x, c1y,
 	print "The center for cluster two is ", c2x, c2y,
 	for i in range(0, len(data)):
 		x1.append(data[i][0])
