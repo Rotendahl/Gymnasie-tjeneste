@@ -178,7 +178,14 @@
     Introduktion til ugen og data analyse, og hvorfor .
 
 
-
+    hånd = Tag_et_kort_i_hånden
+    Indtil_bunken_er_tom GØR:
+        nyt_kort = Tag_kort_fra_Bunken
+        For_alle_kort_på_hånden_fra_venstre GØR:
+            Hvis(nyt_kort < nuværende_kort) GØR:
+                Sæt_kort_ind
+            ELLERS GØR:
+                Gå_videre_til_næste_kort
 
 
 \end{document}
