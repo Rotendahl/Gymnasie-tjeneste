@@ -1,16 +1,18 @@
-from random import * 
+from random import *
 
-cards = sample(range(0,13),10)
+cards = sample(range(0, 13), 10)
+
 
 def shuffle(cards):
-    return sample(range(len(cards)),len(cards))
+    return sample(range(len(cards)), len(cards))
 
 
 def isSorted(cards):
-    for i in range(1,len(cards)):
+    for i in range(1, len(cards)):
         if not (cards[i-1] <= cards[i]):
             return False
     return True
+
 
 def bogoSort(cards):
     cards = cards
