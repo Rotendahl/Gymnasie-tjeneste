@@ -1,0 +1,203 @@
+% Opsætter KU Tex dokument
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[14pt]{article}
+\usepackage[a4paper, hmargin={2.8cm, 2.8cm}, vmargin={2.5cm, 2.5cm}]{geometry}
+\usepackage{eso-pic}  % \AddToShipoutPicture
+\usepackage{graphicx} % \includegraphics
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amssymb}
+% Pakker til skrifttyper, tekst osv.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \usepackage[utf8]{inputenc} % Implementere Unicode
+    \usepackage[T1]{fontenc}    % Unicode skrifttype, fx. é skrives som 1 tegn
+   \usepackage[english]{babel} % Engelsk Ordbog
+  % \usepackage[danish]{babel}  % Dansk Ordbog
+    \usepackage{microtype}      % Forbedre linjeombrydningen
+    \usepackage{libertine}      % Skrifttype
+    \usepackage[scaled=0.83]{inconsolata} % Skrifttype til kode til kode
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Pakker til matematik og kode.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \usepackage{mathtools}       % Udvidelse til amsmath pakken
+   \usepackage{algpseudocode}   % pseudocode til algoritmer
+    \usepackage{algorithm}       % Pakke til algoritmer
+    \usepackage{amsthm}          % Pakke til Theroms
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{ dsfont }
+% Pakker til layout.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \usepackage{fancyhdr}        % Gør det muligt at bruge sidehoveder
+    \usepackage{graphicx}        % Mulighed for bl.a. \includegraphics
+    \usepackage[dvipsnames]{xcolor} % Mulighed for \definecolor
+    \usepackage{colortbl}        % Hvis man vil farvelægge sine tabeller
+    \usepackage{array}           % Gør miljøerne array og tabular lidt bedre
+    \usepackage{parskip}         % Første paragraf i afsnit indrykkes ikke
+    \usepackage{listings}        % Pakke til at indsætte kode
+    \usepackage{enumitem}        % Gør det muligt at tilpasse lister
+    \usepackage{titlesec}        % Tilpassing af afstand mellem sektioner
+    \usepackage[lastpage,user]{zref} % Side x af y
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Ikke standard pakker
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %\usepackage{boxproof}        % Til at lave bevis kasser i logik
+    \usepackage{semantic}        % Pakke til logik med ->, |- osv.
+    %\usepackage{daymonthyear}    % Giver info om dato.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Implementerer en række makroer og de pakker der er importeret
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \pagestyle{fancy}                        % Implementerer sidehoved
+    \lhead{Gymnasietjenesten}               % Venstre sidehoved
+    \rhead{DIKU}      % Højre sidehoved
+    \cfoot{\thepage\ of \zpageref{LastPage}} % Side x af y
+    \newtheorem*{prp}{Propostion}            % Skaber nyt theorem
+    \setlist{nolistsep}              % Formindsker mellemrum mellem listepunkter
+
+    % Definitioner af farver
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \definecolor{KURed1}{RGB}{144,26,30}    % Official KU Red 1
+        \definecolor{KURed2}{RGB}{199,36,41}    % Unofficial KU Red
+        \definecolor{KUGray1}{RGB}{102,102,102} % Official KU Gray 1
+        \definecolor{KUGray2}{RGB}{133,133,133} % Official KU Gray 2
+        \definecolor{KUGray3}{RGB}{163,163,163} % Official KU Gray 3
+        \definecolor{KUGray4}{RGB}{194,194,194} % Official KU Gray 4
+        \definecolor{KUGray5}{RGB}{224,224,224} % Official KU Gray 5
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    % Mindsker afstanden mellem sektioner
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \titlespacing\section{0pt}{12pt plus 4pt minus 2pt}
+                                  {0pt plus 1pt minus 3pt}
+        \titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}
+                                  {0pt plus 1pt minus 3pt}
+        \titlespacing\subsubsection{0pt}{12pt plus 4pt minus 2pt}
+                                  {0pt plus 1pt minus 3pt}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+    % Genveje
+    %€%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \def\meta#1{\mbox{$\langle\hbox{#1}\rangle$}} % Mbox til premiser
+    \def\intro#1{{#1}{\cal I}}
+    \def\elim#1{{#1}{\cal E}}
+    \let\imp\to
+    \let\implies\to
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    % Milø til kode
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \lstdefinestyle{kode}{
+            basicstyle=\scriptsize\ttfamily\color{black},
+            keywordstyle=\bfseries\color{KURed1},
+            commentstyle=\bfseries\color{KUGray1},
+            identifierstyle=\color{black},
+            stringstyle=\color{KURed2},
+            breaklines=false,
+            showspaces=false,
+            showstringspaces=false,
+            extendedchars=true,
+            breakatwhitespace=false,
+        }
+        \lstnewenvironment{code}[1][]
+        {\minipage{\linewidth}
+            \lstset{
+                        #1,
+                        style=kode,
+                        escapeinside={!!}{!!},
+                        frame=tb,
+                    }
+        }
+        {\endminipage}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    % Laver titel
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \title{
+      \vspace{13em}
+      \Large{Datalogisk Institut Københavns Universitet} \\
+      \Huge{Lær at ``Pimpe din SRP rapport'' og databehandling}
+    }
+
+    \author{
+      \Large{Arinbjørn Brandsson} - \texttt{Arbr@di.ku.dk} \\
+      \Large{Benjamin Rotendahl} - \texttt{Bero@di.ku.dk} \\
+      \Large{Mathias Fleig Mortensen} - \texttt{Mamo@di.ku.dk}
+    }
+
+    \date{
+        \vspace{22em}
+        \today
+    }
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\usepackage{subfig}
+%%%%%%%%%%%%%%%%%%%%      Her starter dokumentet    %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+
+    %% Change `ku-farve` to `nat-farve` to use SCIENCE's old colors or
+    %% `natbio-farve` to use SCIENCE's new colors and logo.
+    \AddToShipoutPicture*{\put(0,0){\includegraphics*[viewport=0 0 700 600]
+    {include/ku-farve}}}
+    \AddToShipoutPicture*{\put(0,602){\includegraphics*[viewport=0 600 700 1600]
+    {include/natbio-farve}}}
+
+    %% Change `ku-en` to `nat-en` to use the `Faculty of Science` header
+    \AddToShipoutPicture*{\put(0,0){\includegraphics*{include/nat-en}}}
+    \clearpage
+
+%Disse linjer skaber forside, evt indholdsfortegnelse, og sætter sidetal
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \maketitle              % Forside
+    \thispagestyle{empty}   % Fjerner sidetal forside
+
+        % Slå disse til hvis der ønskes indholdsfortegnelse
+        % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            %\newpage                % Side til indholdsfortegnelse
+            %\thispagestyle{empty}   % Fjerner sidetal fra indholdsfortegnelse
+            %\tableofcontents        % Skaber indholdsfortegnelse
+        % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \newpage                % Første rigtige side
+    \setcounter{page}{1}    % Sætter rigtigt sidetal på første side
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Tilbud til Gymnasieelever på DIKU i efterårsferien}
+Kom ud på DIKU mandag og tirsdag i efterårs ferien og lær hvordan du kan skrive
+rapporter i LaTeX.
+
+Der vil også være mulighed for at lære om databehandling og hvilke værktøjer der
+er gode at have. Forløbet er for alle gymnasieelever og kræver ingen
+programmeringserfaring.
+\subsection*{LaTeX}
+    Du kommer til at lære sproget LaTeX, det er en måde at skrive rapporter på
+    som er vidt brugt i den videnskabelige verden. Det håndtere matematiske
+    formler og notationer bedre end Word, og har et hav af udvidelsespakker til
+    kemi, fysik, biologi osv.
+
+    Man kan se eksempler på nogle af de ting latex kan ved at gå ind på dette
+    link https://www.overleaf.com/latex/examples
+
+\subsection*{Databehandling}
+Det vil også være muligt at få en introduktion til python og hvordan det kan
+bruges til databehandling og værktøjer til at arbejde videre.
+
+\subsection*{Forløb}
+
+\Large{
+\begin{center}
+\begin{tabular}{ l || c | c }
+    Tidspunkter &  Mandag & Tirsdag \\
+    \hline
+    10.00 & Intro til Latex & Workshop \\
+    12.00 & Frokost         & Frokost \\
+    12.45 & Workshop        & Intro til databehandling \\
+    15.00 & Tak for idag    & Tak for idag \\
+\end{tabular}
+\end{center}
+}
+
+\end{document}
