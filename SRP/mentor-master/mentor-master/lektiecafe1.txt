@@ -1,0 +1,111 @@
+################## Emacs #####################
+
+.. Generel introduktion
+   Meget konfigurérbar (.emacs)
+
+----------------------------------------------
+
+.. Keybindings
+   Control (C), Meta/alt (M)
+
+... Gem / åben
+    Åben fil:                   C-x C-f (find)
+    Gem fil:                    C-x C-s (save)
+    Skriv fil:                  C-x C-w (write)
+
+... Split skærm
+    Vindue fuldskærm:           C-x 1
+    Vindue split horizontalt:   C-x 2
+    Vindue split vertikalt:     C-x 3
+    Skift vindue:               C-x C-o
+    Skift buffer:               C-x C-b
+
+... Søgning
+    Søg fremad:                 C-s (search)
+    Søg tilbage:                C-r (reversed search)
+
+... Random
+    Undo:                       C-_
+
+... Cursor bevægelse
+    Piletaster
+    Et tegn frem:               C-f (forward)
+    Et tegn tilbage:            C-b (backward)
+    En linje op:                C-p (previous)
+    En linje ned:               C-n (next)
+    Start af linje:             C-a (?)
+    Slutning af linje:          C-e (end)
+    Et ord frem:                M-f (forward)
+    Et ord tilbage:             M-b (backward)
+
+... Regioner
+    Marker region:              C-<space>
+    Fjern region:               C-w
+    Yank:                       C-y
+
+... Copy/Paste
+    Copy:                       C-w + C-y
+    Paste:                      C-y
+    Cua-mode:                   C-c, C-v
+
+... Gode modes
+    Automatisk lukkede paranteser: electric-pair-mode
+    Highlight paranteser: show-paren-mode
+    Highlight nuværende linje: global-hl-line-mode
+    Vis linjenummer: global-linum-mode
+    Nyan-cat: M-x package-install nyan-mode
+    Temaer: M-x package-install color-theme-solarized
+    Skift tema: load-theme solarized-light
+
+----------------------------------------------
+
+.. HJÆLP!
+   Generel hjælp:               M-x help m
+   Stop alt:                    C-g
+
+----------------------------------------------
+
+.. F#-mode
+... Installér
+    M-x package-install fsharp-mode
+
+... Keybindings
+    Compile fil:                 C-c C-c
+    Evaluer region:              C-c C-r
+
+################## LaTeX #####################
+
+.. Sharelatex
+   www.sharelatex.com
+   Evt. emacs keybindings
+
+----------------------------------------------
+
+.. Preample
+   Link til personlig
+
+----------------------------------------------
+
+.. Basal syntax
+   Newline: \\
+   Sektioner: \section{navn}, \subsection{navn}, \subsubsection{navn}
+
+----------------------------------------------
+
+.. Matematik
+   Math-mode:                    $$
+
+   Brug www.detexify.com til at finde symboler.
+
+   Brug align:
+   \begin{align*}
+   a &= b + 2^2
+     &= b + 4
+   \end{align*}
+
+----------------------------------------------
+
+.. Figurer
+   Brug Tikz
+
+   Se evt. http://www.texample.net/tikz/examples/ for gode eksempler med kode.

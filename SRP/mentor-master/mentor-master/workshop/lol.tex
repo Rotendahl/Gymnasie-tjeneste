@@ -1,0 +1,82 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{stmaryrd}
+\usepackage{fancyhdr}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{pgf}
+\usepackage{tikz}
+\usepackage{listings}
+\usepackage{color}
+\usetikzlibrary{arrows,automata}
+
+\title{Logik exam 2014}
+\author{Sebastian Andersen (xtf221)}
+\date{October 2014}
+
+\setlength{\parindent}{0in}
+
+\newcommand{\Fin}{
+\vfill
+\begin{center}
+\textit{}\label{FIN}
+\end{center}}
+
+\renewcommand{\figurename}{Fig.}
+
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{2.5em}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[L]{Logik 2014}
+\fancyhead[R]{Sebastian S. Andersen}
+\fancyfoot[R]{Side \thepage\ af \pageref{FIN}}
+
+\lstset{basicstyle=\ttfamily,
+  keywordstyle=\bfseries,
+  showstringspaces=false,
+  numbers=left,
+  breaklines=true,
+  frame=simple,
+  morekeywords={include, printf}
+}
+
+\definecolor{bluekeywords}{rgb}{0.13,0.13,1}
+\definecolor{greencomments}{rgb}{0,0.5,0}
+\definecolor{turqusnumbers}{rgb}{0.17,0.57,0.69}
+\definecolor{redstrings}{rgb}{0.5,0,0}
+\lstdefinelanguage{FSharp}
+                {morekeywords={let, new, match, with, rec, open, module, namespace, type, of, member, and, for, in, do, begin, end, fun, function, try, mutable, if, then, else},
+    keywordstyle=\color{bluekeywords},
+    sensitive=false,
+    morecomment=[l][\color{greencomments}]{///},
+    morecomment=[l][\color{greencomments}]{//},
+    morecomment=[s][\color{greencomments}]{{(*}{*)}},
+    morestring=[b]",
+    stringstyle=\color{redstrings}
+    }
+
+\begin{document}
+
+a) $\frac{1}{2} \cdot \sqrt{5}$\\
+b) $\forall{x} \in X, \hspace{2em} \exists{y \leq \epsilon}$\\
+c) $(p \to q) \land (p \to r) \vdash p \to q \land r$\\
+d) $\cos(2 \theta) = \cos^2(\theta) - \sin^2(\theta)$\\
+e) $k_{k+1} = n^2 + k^2_n - k_{n-1}$\\\\
+$Am,n =
+\begin{bmatrix}
+  a_{1,1} & a_{1,2} & \hdots & a_{1,n}\\
+  a_{2,1} & a_{2,2} & \hdots & a_{2,n}\\
+  \vdots & \vdots & \ddots & \vdots\\
+  a_{m,1} & a_{m,2} & \hdots & a_{m,n}\\
+\end{bmatrix}
+$
+
+%\lstinputlisting[language=FSharp]{fib.fs}
+\lstinputlisting[language=FSharp, firstline=5, lastline=10]{fib.fs}
+
+\Fin
+\end{document}
