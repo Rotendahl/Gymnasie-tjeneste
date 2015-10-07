@@ -19,14 +19,14 @@
 
 % Pakker til matematik og kode.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \usepackage{mathtools}       % Udvidelse til amsmath pakken                % 
+    \usepackage{mathtools}       % Udvidelse til amsmath pakken                %
     \usepackage{amsthm}          % Pakke til bevisførelse                      %
     \usepackage{amssymb}         % Extra matematiske symboler                  %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Pakker til layout.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \usepackage{fancyhdr}            % Gør det muligt at bruge sidehoveder     %  
+    \usepackage{fancyhdr}            % Gør det muligt at bruge sidehoveder     %
     \usepackage{graphicx}            % Mulighed for bl.a. \includegraphics     %
     \usepackage{colortbl}            % Hvis man vil farvelægge sine tabeller   %
     \usepackage{array}               % Gør miljøerne array og tabular bedre    %
@@ -44,14 +44,14 @@
     \cfoot{\thepage\ of \zpageref{LastPage}} % Side x af y                     %
     \newtheorem*{prp}{Propostion}            % Skaber nyt theorem              %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    
+
 % Mindsker afstanden mellem sektioner
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{0pt plus 1pt minus 3pt}      %
 \titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 1pt minus 3pt}   %
 \titlespacing\subsubsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 1pt minus 3pt}%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    
+
 % Laver titel
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \title{                                                                    %
@@ -76,14 +76,14 @@
 %%%%%%%%%%%%%%%%%%%%      Her starter dokumentet    %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
-% KU forside 
+% KU forside
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \AddToShipoutPicture*{\put(0,0){\includegraphics*[viewport=0 0 700 600]     %
     {include/ku-farve}}}                                                        %
     \AddToShipoutPicture*{\put(0,602){\includegraphics*[viewport=0 600 700 1600]%
     {include/natbio-farve}}}                                                    %
     \AddToShipoutPicture*{\put(0,0){\includegraphics*{include/nat-en}}}         %
-    \clearpage                                                                  % 
+    \clearpage                                                                  %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %Disse linjer skaber forside, evt indholdsfortegnelse, og sætter sidetal
@@ -130,12 +130,8 @@
         fungerer, og hvilke fordele det har over programmer som Word.
 
         \item[kl 12.00-12.45] | Pause ~ \\
-        Der vil være frokost pausen, 
-        $$ 1+ 1$$
-		Dette er placeholder tekst da jeg ikke hvem om kantinen har åbent eller ej
-		så enten skal vi sige at man enten kan have madpakke med eller penge
-		eller kun madpakke. 
-		$$1+1$$
+        Til frokost kan i enten have madpakke med, eller tage penge med til
+        kantinen.
 
         \item[12.45 - 15.00] | Øvelser ~ \\
         Til øvelserne vil i blive givet et print lavet i LaTeX med forskellige
@@ -151,11 +147,8 @@
         jeres egne afleveringer med, som i så skal ``TeXe''.
 
         \item[kl 12.00-12.45] | Pause ~ \\
-       $$ 1+ 1$$
-		Dette er placeholder tekst da jeg ikke hvem om kantinen har åbent eller ej
-		så enten skal vi sige at man enten kan have madpakke med eller penge
-		eller kun madpakke. 
-		$$1+1$$
+        Til frokost kan i enten have madpakke med, eller tage penge med til
+        kantinen.
 
         \item[12.45 - 15.00] | Intro til databehandling ~ \\
         Vi vil holde en forelæsning, hvor vi demonstrerer forskellige databehandlings
@@ -193,10 +186,11 @@
 		    \caption{Installations vinduerne}%
 		\end{figure}\\
         Mac brugere skal forsætte med at trykke på ``continue'' indtil programmet
-        er installeret. 
-        
-        
-        Windows brugere skal vælge "simple install" og trykke ``next''. Vær sikker på at alle indstillinger passer med dem der vises på nedenstående
+        er installeret.
+
+
+        Windows brugere skal vælge "simple install" og trykke ``next''.
+        Vær sikker på at alle indstillinger passer med dem der vises på nedenstående
         figur. Afslut installationen af din LaTeX-motor ved at trykke ``install''.
         \begin{figure}[h!]
             \caption{Indstillinger for windows}
@@ -205,7 +199,7 @@
         \end{figure}
         Du har nu installeret en tex motor.
 		 \end{itemize}
-		 
+
         \subsection{Latex Editor}
         Det program vi bruger til at interagere med LaTeX motoren hedder
         ``TeXMaker''. Hent installationsfilen her
@@ -216,40 +210,38 @@
 
         Mac-brugere skal udpakke zip filen ved at dobbeltklikke på den og
         flytte programmet ind i deres ``Applications'' mappe.
-        Windows-brugere skal dobbeltklikke på filen og vælge install. 
+        Windows-brugere skal dobbeltklikke på filen og vælge install.
    		\begin{figure}%
     		\centering
     		\subfloat[Mac brugere]{{\includegraphics[width=5cm]{texMove.png}}}%
 	    	\qquad
 	    	\subfloat[Windows brugere]{{\includegraphics[width=5cm]{winMove.png} }}
 		\end{figure}
-	
-	I mangler nu kun at installere dansk ordbog i LaTex. 
+
+	I mangler nu kun at installere dansk ordbog i LaTex.
 	Dette gøres ved at hente denne zip fil, og udpakke den til et passende sted
 	på jeres computer.
-	$$
-		http://rotendahl.dk/da\_DK.zip 
-	$$		
-	Herefter går i ind i indstillingere i TexMaker, og vælger den fil i 
-	lige har udpakket. 
-	Indlæs så den danske ordbog ved at vælge den som vist i billedet. 
+	\begin{quote}
+			http://rotendahl.dk/da-DK.zip
+	\end{quote}
+	
+	Herefter går i ind i indstillingere i TexMaker, og vælger den fil i
+	lige har udpakket.
+	Indlæs så den danske ordbog ved at vælge den som vist i billedet.
 	\begin{figure}[h!]
     	\caption{Dansk ordbog}
         \centering
         \includegraphics[width=0.6\textwidth]{./danish.png}
     \end{figure}
-	
+
 	\section{Outro}
-	Du har nu installeret alt og er klar til workshoppen. 
-	Hvis du allerede nu er lidt nysgerrig på, hvad det som du har installeret 
-	kan bruges til, så kan du hente følgnede dokument og se hvordan det er skrevet.  \\ Vi glæder os til at se jer den 12.! 
-		$$
-		http://rotendahl.dk/eks-tex.zip 
-	$$
-
-   
-
-
-
-
+	Du har nu installeret alt og er klar til workshoppen.
+	Hvis du allerede nu er lidt nysgerrig på, hvad det som du har installeret
+	kan bruges til, så kan du hente følgnede dokument og se hvordan det er
+	skrevet.
+    \\ Vi glæder os til at se jer den 12.!
+	\begin{quote}
+		http://rotendahl.dk/eks-tex.zip	
+	\end{quote}
+	
 \end{document}
