@@ -1,0 +1,7 @@
+\beamer@endinputifotherversion {3.36pt}
+\beamer@sectionintoc {1}{Forl\IeC {\o }bets program}{3}{0}{1}
+\beamer@sectionintoc {2}{Introduktion til algoritmer}{6}{0}{2}
+\beamer@sectionintoc {3}{Algoritme vs Algoritme}{17}{0}{3}
+\beamer@sectionintoc {4}{Algoritme design}{35}{0}{4}
+\beamer@sectionintoc {5}{\IeC {\O }velser}{40}{0}{5}
+\beamer@sectionintoc {6}{Opsamling og Sp\IeC {\o }rgsm\IeC {\r a}l}{51}{0}{6}
