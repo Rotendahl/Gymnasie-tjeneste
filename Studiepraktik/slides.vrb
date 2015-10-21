@@ -1,11 +1,10 @@
-\frametitle{Turing Tarpit - Fortsat}
-"Hello, World!" i C:\pause
-\begin{lstlisting}[language=C]
-#include<stdio.h>
-
-main()
-{
-    printf("Hello, World");
-
-}
+\frametitle{Notable Example}
+\begin{block}{ProLog}
+\begin{itemize}
+\item Er specialiseret til bruger defineret logik relationer
+\end{itemize}
+\end{block}
+\begin{lstlisting}{language=ProLog}
+:- initialization(main).
+main :- write('Hello World!'), nl, halt.
 \end{lstlisting}
