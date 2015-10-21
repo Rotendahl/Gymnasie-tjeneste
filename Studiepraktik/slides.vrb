@@ -1,0 +1,11 @@
+\frametitle{Turing Tarpit - Fortsat}
+"Hello, World!" i C:\pause
+\begin{lstlisting}[language=C]
+#include<stdio.h>
+
+main()
+{
+    printf("Hello, World");
+
+}
+\end{lstlisting}
