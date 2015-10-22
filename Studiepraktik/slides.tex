@@ -39,7 +39,7 @@
 \end{block}
 \begin{block}{Et Regelsæt til Hvordan der Kommunikeres}
 \begin{itemize}
-\item Et programmeringssprog definerer hvordan man kan kommunikere med 
+\item Et programmeringssprog definerer hvordan man \textbf{kan} kommunikere med 
 en datamat\\
 \item Uden programmeringssprog skulle vi kode i maskinssprog
 \end{itemize}
@@ -56,19 +56,21 @@ som oversætter koden til MIPS Assembly (Maskinsprog for mennesker)\\
 \item MIPS Assembly oversættes af datamaten om til binært som den kan forstå
 \end{itemize}
 \end{block}
-\begin{figure}[h]
-\centering
-\includegraphics[scale=0.25]{Img/LangToMachine.pdf}
-\end{figure}
 \end{frame}
 
+\begin{frame}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.55]{Img/LangToMachine.pdf}
+\end{figure}
+\end{frame}
 \begin{frame}
 \frametitle{Turing Tarpit}
 "Beware of the Turing tar-pit in which everything is possible but nothing of interest is easy."\\
 ~~~~~~~~~~-Alan Perlis, \emph{Epigrams on Programming}\\
 \begin{block}{Turing Komplethed}
 Et programmeringssprog er Turing komplet hvis alle (korrekte) algoritmer kan 
-køre ved brug af programmeringssproget
+køres ved brug af programmeringssproget
 \end{block}
 \end{frame}
 \begin{frame}[fragile]
@@ -139,11 +141,11 @@ main()
  \begin{block}{Der Findes Mange Forskellige Typer af Programmeringssprog}
  \begin{itemize}
   \item Object-Orientered programming
-  \item Funktionel programming, og
+  \item Functional programming, og
   \item Logic programming
  \end{itemize}
  \end{block}
- \begin{exampleblock}{Og Disse Kan Underklassificeres om Hvordan Typer Håndteres}
+ \begin{exampleblock}{Og Disse Kan Underklassificeres}
  \begin{itemize}
  \item Static/Dynamic typing
  \item Weak/Strong typing
@@ -155,21 +157,92 @@ main()
 
 \begin{frame}
 \frametitle{Object-Oriented Programming}
-\begin{block}{}
+\begin{block}{Klasser og Objekter}
+\begin{itemize}
+\item Klasse: Man definere et skelet for fremtidige versioner\\
+\begin{itemize}
+\item Eksempel: Et menneske har to arme, to ben, øjne og hår
+\end{itemize} 
+\item Objekt: Man instantiere skelettet med værdier man selv bestemmer\\
+\begin{itemize}
+\item Eksempel: Et menneske har brune øjne, og sort hår
+\end{itemize}
+\end{itemize}
 \end{block}
+\begin{block}{}
+Kan bruges til mange forskellige ting, som for eksempel hvis der er brug for 
+en grafisk overflade som kan manipuleres
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Notable Example}
+\begin{block}{Java}
+\begin{itemize}
+\item Nem at lære
+\item Kan bruges på alle platforme via virtual machines (skalerbart)
+\item Har utrolig meget support
+\end{itemize}
+\end{block}
+\begin{lstlisting}[language=Java]
+public class HelloWorld {
+    public static void main(String[] args) {
+        // Prints "Hello, World" to the terminal.
+        System.out.println("Hello, World");
+    }
+}
+
+\end{lstlisting}
 \end{frame}
 
 \begin{frame}
 \frametitle{Functional Programming}
-\begin{block}{}
+\begin{block}{Funktioner og Deling}
+\begin{itemize}
+\item En funktions output er kun afhængig af dens input
+\item Kan (typisk) beskrive det samme som i et objekt-orienteret sprog i 
+færre linjer
+\item Er industri standard i matematisk analyse, (nogen typer) machine learning, 
+text redigering og analyse, og noget back-end
+\end{itemize}
 \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Notable Example}
+\begin{block}{Haskell}
+\begin{itemize}
+\item Industri-standard funktionel programmeringssprog grundet monader
+\item Nemt at lære, svær at mestre
+\end{itemize}
+\end{block}
+\begin{lstlisting}[language=Haskell]
+main = putStrLn "Hello, World!"
+\end{lstlisting}
 \end{frame}
 
 %Prolog!
 \begin{frame}
 \frametitle{Logic Programming}
-\begin{block}{}
+\begin{block}{Logik med Logik På}
+\begin{itemize}
+\item Bruges til at finde en (eller flere) sandhedsværdier i et input
+\item Kan bruges til AI, for eksempel
+\end{itemize}
 \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Notable Example}
+\begin{block}{ProLog}
+\begin{itemize}
+\item Er specialiseret til bruger defineret logik relationer
+\end{itemize}
+\end{block}
+\begin{lstlisting}{language=ProLog}
+:- initialization(main).
+main :- write('Hello World!'), nl, halt.
+\end{lstlisting}
 \end{frame}
 % \begin{frame}
 %   \frametitle{Søgning}
