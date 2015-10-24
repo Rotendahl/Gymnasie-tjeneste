@@ -4,3 +4,7 @@ latexOut/
 *.log
 *.aux
 .DS_Store
+*.nav
+*.out
+*.toc
+*.snm

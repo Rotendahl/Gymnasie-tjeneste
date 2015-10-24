@@ -1,0 +1,37 @@
+\documentclass[]{article} % Lav dokument ud fra artikel-klassen
+
+%%%%%%%%%%%%%%%%%%
+% Pakker/macroer %
+%%%%%%%%%%%%%%%%%%
+\usepackage{amssymb,latexsym,amsmath,graphicx} % Standard pakker
+\usepackage[utf8]{inputenc} % Gør så unicode-karakterer kan benyttes
+\usepackage{multirow} % Gør det muligt at benytte multirows i tabeller
+\renewcommand{\tablename}{Tabel} % Fix caption på tabeller til at være på dansk
+
+%%%%%%%%%%%%
+% Marginer %
+%%%%%%%%%%%%
+\addtolength{\textwidth}{1.0in}
+\addtolength{\textheight}{1.00in}
+\addtolength{\evensidemargin}{-0.75in}
+\addtolength{\oddsidemargin}{-0.75in}
+\addtolength{\topmargin}{-.50in}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Theorem/Proof miljøer 							  %
+% Det er vigtigt at kunne tilegne sig andres miljøer! %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheorem{theorem}{Theorem}
+\newenvironment{proof}{{\bf Bevis:}}{$\hfill \Box$ \vspace{10pt}}
+
+%%%%%%%%%%%%
+% Dokument %
+%%%%%%%%%%%%
+\begin{document}
+
+\title{Kopier denne \LaTeX ~fil!}
+\author{Arinbjörn, Benjamin \& Mathias}
+\date{12. oktober, 2015}
+
+\maketitle
+\end{document}
