@@ -1,0 +1,314 @@
+\documentclass[12pt,t]{beamer}
+\usetheme[greyauthor, % Grå tekst forfatter som KU vil have
+         unit=ics, % Ændre til NAT, KU, eller unit=ics (diku)
+         dk, % Sprog
+         %style=simple, % Vandmærke eller billede
+         footstyle=low, % Fjern stor footer
+         wmark, % vandmærke på hver side
+         logoplace=left % Logo til venstre
+         %,sidebar % makes sidebar
+         ]{Frederiksberg}
+% nat for Science, ku for generic or unit=ics for DIKU
+% Tilføj style=simple for vandmærke
+\usepackage{listings} % Pakke til kode
+\usepackage{pslatex}        % pæn skrift
+\usepackage[utf8]{inputenc} % Implementerer Unicode
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{marvosym}
+
+\title{Studiepraktik dag 2}
+\subtitle{Datanalyse med Machine Learning}
+\author{
+        Arinbjörn Brandsson \\
+        Benjamin Rotendahl  \\
+        Mathias Mortensen
+}
+
+\date[]{\today}
+
+
+\begin{document}
+
+\frame[plain]{\titlepage}
+ \frame{\tableofcontents}
+
+ \section{Hvad er Machine Learning}
+     \begin{frame}[t]{Hvad er Machine Learning}
+         \begin{block}{Problemstilling}
+             Vi indsamler stører og stører mængder af data hele tiden, så meget
+             at det har fået sit eget buzzword \alert{Big Data}. \\
+             \pause
+             Vi mennesker kan ikke overskue så store mængder af data
+         \end{block}
+
+         \pause
+
+         \begin{block}{ML til undsætning!}
+             Vi ønsker istedet at lave systemer sådan at computere kan finde de
+             underliggende mønstre og bruge den viden/erfaring der ligger i data'en
+         \end{block}
+
+         \pause
+
+         \begin{block}{Hvornår er ML godt?}
+             \begin{enumerate}
+                 \item Der eksisterer et mønster \pause
+                 \item Vi kan ikke finde en matematisk formel \pause
+                 \item Vi har data på problemet
+             \end{enumerate}
+         \end{block}
+     \end{frame}
+
+     \begin{frame}[t]{Eksempel tid}
+         \begin{quote}
+             Netflix udlovede en dusør på $6,5$ millioner kroner til den der
+             kunne forbedre deres anbefalings algoritme med $10\%$.
+         \end{quote}
+
+         \pause
+
+         \begin{block}{Kan ML bruges?}
+             \begin{enumerate}
+                 \item Der eksisterer et mønster! \pause
+                 \item Vi kan ikke finde en formel for film \pause
+                 \item Der er massere af data til rådighed!
+             \end{enumerate}
+         \end{block}
+         \pause
+         \centering \emph{ML vandt konkurrencen!}
+     \end{frame}
+
+    \begin{frame}{Hvordan vandt de?}
+        \begin{figure}[h!]
+            \caption{Netflix vinderen}
+            \centering
+            \includegraphics[width=0.8\textwidth]{netflix.png}
+        \end{figure}
+    \end{frame}
+
+    \begin{frame}[t]{Dagens \emph{Historie}}
+        \begin{quote}
+            Vi er blevet hyret af Danske Bank da de har hørt at vi dataloger
+            kan tjene dem en masse penge.
+        \end{quote}
+        \pause
+        \begin{block}{Problemstilling}
+            Vi skal lave et system der givet data om en kunde og et beløb kan
+            bestemme om det er en god foretning at låne dem de penge.
+        \end{block}
+        \pause
+        \centering Hmm, det var da et ret generelt problem $\dots$
+        \pause
+        \begin{block}{Problemstilling}
+            Vi skal lave et system der givet data om en \alert{patient} og
+            \alert{en mængde af Chemo} kan bestemme om det er en god behandling.
+        \end{block}
+        \pause
+        \centering Vi koder for kapitalen!
+    \end{frame}
+
+\section{Problemet}
+\frame{\tableofcontents[currentsection]}
+    \begin{frame}[c]{Håndtering af input og output}
+        \begin{columns}
+            \begin{column}{0.5\textwidth}
+                \begin{block}{Input}
+                    \begin{center}
+                        \begin{tabular}{| c | r |}
+                            \hline
+                            alder              & 27                \\ \hline
+                            køn                & 1                 \\ \hline
+                            Årlig Løn          & 50.000            \\ \hline
+                            Bopæl              & 2300              \\ \hline
+                            Gæld               & 40.000            \\ \hline
+                            $\vdots$           & $\vdots$          \\ \hline
+                            \alert{Ønsket lån} & \alert{3.000.000} \\ \hline
+                        \end{tabular}
+                    \end{center}
+                \end{block}
+                \begin{block}{Output}
+                    \centering Tjente vi penge?
+                    {\color{KUNATgreen}ja}
+                \end{block}
+            \end{column}
+            \pause
+
+            \begin{column}{0.2\textwidth}
+                \vspace{4em}
+                \begin{Huge}
+                    $$
+                        \rightarrow
+                    $$
+                \end{Huge}
+            \end{column}
+            \begin{column}{0.3\textwidth}
+                \begin{block}{Data vektor}
+                    $$
+                        \left(
+                        \begin{tabular}{c}
+                            27      \\
+                            1      \\
+                            50.000 \\
+                            2300   \\
+                            40.000 \\
+                            \vdots \\
+                            3.000.000
+                        \end{tabular}
+                        \right)
+                    $$
+                \end{block}
+                \begin{block}{Output}
+                    1
+                \end{block}
+            \end{column}
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}[t]{Formalisering}
+        \begin{block}{Termer}
+            \begin{description}
+                \item[Input] En vektor (Lån ansøgning)  \pause
+                \item[Output] $1$ eller $-1$ (God eller dårlig forretning) \pause
+                \item[Læringsmål]$\mathcal{F}: \mathcal{X} \rightarrow
+                                   \mathcal{Y}$ \pause
+                \item[Data] $(x_1,y_1), (x_2,y_2),\dots,(x_n,y_n)$
+                (Hvad vi lærer fra) \pause
+                \item[Hypotese] $g: \mathcal{X} \rightarrow
+                                   \mathcal{Y}$ (Vores systems ``Hjerne'')
+            \end{description}
+        \end{block}
+    \end{frame}
+
+    \begin{frame}[c]{Visuel Formalisering}
+        \begin{block}{~}
+            \begin{figure}[h!]
+                \caption{Visuelt læringsdiagram}
+                \centering
+                \includegraphics[width=0.7\textwidth]{dia.png}
+            \end{figure}
+        \end{block}
+    \end{frame}
+
+
+\section{Algoritmen}
+\frame{\tableofcontents[currentsection]}
+
+    \begin{frame}[t]{Valget af lærings-algoritmen}
+        \begin{block}{Perceptron}
+            Den laver et \emph{hyperplan} der adskiler data'en og finder en
+            opdeling der giver en \alert{lav fejl}. \\
+            \pause
+            Tænk på den som en form for lineær regression på steroider
+            $$
+                y = ax + b
+            $$
+        \end{block}
+        \pause
+        \begin{block}{Eksempel på algoritmen}
+            \begin{figure}[h!]
+                \centering
+                \includegraphics[width=0.6\textwidth]{per1.png}
+            \end{figure}
+        \end{block}
+    \end{frame}
+
+
+    \begin{frame}[t]{Algoritmen i ord}
+        \begin{block}{Hvordan virker den?}
+            Vi har en masse vektorer $v_1,v_2,\dots,v_n$ og en liste af svar
+            $y_1,y_2,\dots,y_n$. \\
+            \pause
+            Vi lader $w$ være vores ``vægt-vektor''. \pause
+            \vspace{-1em}
+            \begin{flalign*}
+                \text{Godkend lån hvis : } \sum_{i=1}^d w_i x_i &> b \\
+                \text{Afvis   lån hvis : } \sum_{i=1}^d w_i x_i &< b
+            \end{flalign*}
+            \pause
+            \vspace{-1em}
+            Vores hypotese bliver så
+            $$
+                h(x) = fortegn\left(\sum_{i=0}^d w_i x_i \right)
+            $$
+            \pause
+            \centering Men hvordan bestemmer vi $w$?
+        \end{block}
+    \end{frame}
+
+    \begin{frame}[t]{Hvordan den lærer}
+        \begin{block}{Hvordan $w$ bestemmes}
+            \pause
+            $$w = \text{ vælg tilfæledige tal}$$
+            \pause
+            Vi forbederer $w$ hver gang!\\ \pause
+            Hvis $x'$ er på den forkerte side af $w$ så lærer den ``erfaringen''
+            ved formlen \pause
+            $$
+                w_{ny} = w + y' x'
+            $$
+            \pause
+            Forsæt med at lære indtil du ikke kan lære mere.
+        \end{block}
+    \end{frame}
+
+
+    \begin{frame}[plain]{Perceptron algoritme}
+        \begin{block}{Pseduocode}
+        \vspace{-1.5em}
+        \begin{algorithm}[H]
+            \caption{\newline Input: datasæt $X=[(x_1,y_1),\dots, (x_n,y_n)$
+                     \newline Output: Hypotesen $w$.
+            }
+            \begin{algorithmic}
+                \State w = Tilfældige tal
+                \State misCat = $(1,1)$
+                \While{$misCat \neq (0,0)$}
+                \State misCat = $(0,0)$
+                \For{$(x_i,y_i)$ in $X$}
+                    \If{$sign(w^Tx_i) \neq y_i$ }
+                        \State misCat = $(x_i,y_i)$
+                        \State $w = w + y_i x_i$
+                    \EndIf
+                \EndFor
+                \EndWhile \\
+                \Return w
+            \end{algorithmic}
+        \end{algorithm}
+        \end{block}
+    \end{frame}
+
+\section{Eksempel og algoritme-analyse}
+\frame{\tableofcontents[currentsection]}
+    \begin{frame}[t]{Vi prøver at køre den!}
+        \begin{quote}
+            Eksempel i MatLab
+        \end{quote}
+        \pause
+        \begin{block}{Analyse}
+            Nogen der kan gætte køretiden? \pause
+            $$
+                O(2^{(n+1) log(n+1)} (n + 1)^2)
+                $$
+                Tjener vi så nogle penge eller redder nogle liv?
+                \pause
+                Det kan jeg ikke svare på \Frowny{}
+            \end{block}
+    \end{frame}
+
+    \begin{frame}[t]{Afslutning}
+    \begin{block}{Fejl i min simulering}
+        \begin{figure}[h!]
+            \centering
+            \includegraphics[width=1\textwidth]{histperc.png}
+        \end{figure}
+    \end{block}
+    \pause
+    \centering Spørgsmål?\\
+    \pause
+    Har jeg tid til mere?
+    \end{frame}
+
+
+
+\end{document}
