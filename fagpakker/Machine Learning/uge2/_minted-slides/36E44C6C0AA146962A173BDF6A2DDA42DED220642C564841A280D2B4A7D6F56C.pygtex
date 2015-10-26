@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{nums} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{42}\PYG{p}{,} \PYG{l+m+mi}{314}\PYG{p}{,} \PYG{l+m+mi}{1337}\PYG{p}{,} \PYG{l+m+mi}{69}\PYG{p}{,} \PYG{l+m+mi}{13}\PYG{p}{,} \PYG{l+m+mi}{7}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{]}
+\PYG{n}{mini} \PYG{o}{=} \PYG{n}{nums}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
+\PYG{k}{for} \PYG{n}{x} \PYG{o+ow}{in} \PYG{n}{nums}\PYG{p}{:}
+    \PYG{k}{if}\PYG{p}{(}\PYG{n}{x} \PYG{o}{<} \PYG{n}{mini}\PYG{p}{):}
+        \PYG{n}{mini} \PYG{o}{=} \PYG{n}{x}
+\PYG{k}{print} \PYG{n}{mini}
+\end{Verbatim}
