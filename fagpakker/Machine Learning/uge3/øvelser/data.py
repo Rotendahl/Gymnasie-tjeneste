@@ -1,4 +1,8 @@
 from random import randint
+from matplotlib.mlab import PCA
+import matplotlib.pyplot as plt
+import numpy as np
+from numpy.random import random
 
 
 def getXs():
@@ -53,13 +57,7 @@ def getXs():
          [1, 2, 1, 1, 2, 2, 1, 1, 1, 1], [1, 5, 1, 1, 1, 2, 1, 3, 1, 1],
          [1, 9, 6, 9, 2, 10, 6, 2, 9, 10], [1, 7, 5, 6, 10, 5, 10, 7, 9, 4]
          ]
-    return x[0:20]
-
-x = getXs()
-
-for v in x:
-    if len(v) < 10:
-        print len(v)
+    return x[0:25]
 
 
 def getYs():
@@ -68,6 +66,83 @@ def getYs():
          -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
          -1, 1, -1, -1, 1, -1, 1, -1, -1, 1, 1, -1, 1, -1, -1, 1, 1, 1, 1, 1,
          1, 1, 1, 1, -1, -1, -1, -1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, -1, -1]
-    return y[0:20]
+    return y[0:25]
+
+
+def prikProd(u, v):
+    result = 0
+    for i in range(0, len(u)):
+        result += u[i] * v[i]
+    return result
+
+
+def pcaHelper(vector, ys):
+    dataMatrix = np.array(vector)
+    myPCA = PCA(dataMatrix)
+    greensX = []
+    greensY = []
+    redsX = []
+    redsY = []
+    i = 0
+    for y in ys:
+        if y == 1:
+            greensX.append(myPCA.Y[i, 0])
+            greensY.append(myPCA.Y[i, 1])
+        else:
+            redsX.append(myPCA.Y[i, 0])
+            redsY.append(myPCA.Y[i, 1])
+        plt.plot(greensX, greensY, 'o', color='green')
+        plt.plot(redsX, redsY, 'o', color='red')
+        i += 1
+    plt.show()
+
+
+def sumList(lst1, lst2):
+    newList = []
+    for i in range(0, len(lst1)):
+        newElem = lst1[i] + lst2[i]
+        newList.append(newElem)
+    return newList
+
+
+def gangList(n, lst):
+    newLst = []
+    for x in lst:
+        newLst.append(n * x)
+    return newLst
+
+
+def makeHyper():
+    w = [1]
+    for i in range(1, 10):
+        w.append(randint(1, 10))
+    return w
+
+
+def update(w, x, y):
+    wNew = gangList(y, x)
+    wNew = sumList(w, wNew)
+    return wNew
+
+
+def hypo(w, x):
+    prik = prikProd(w, x)
+    val = 1
+    if(prik < 0):
+        val = -1
+    return val
+
+
+def findWeight(x, y):
+    w = makeHyper()
+    wasWrong = True
+    while(wasWrong):
+        wasWrong = False
+        for i in range(len(x)):
+            if(hypo(w, x[i]) != y[i]):
+                w = update(w, x[i], y[i])
+                wasWrong = True
+    return w
+
 
 print len(getYs())
