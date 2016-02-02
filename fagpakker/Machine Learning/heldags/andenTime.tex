@@ -1,0 +1,215 @@
+\documentclass[12pt,t]{beamer}
+\usetheme[greyauthor, % Grå tekst forfatter som KU vil have
+         unit=ics, % Ændre til NAT, KU, eller unit=ics (diku)
+         dk, % Sprog
+         %style=simple, % Vandmærke eller billede
+         footstyle=low, % Fjern stor footer
+         wmark, % vandmærke på hver side
+         logoplace=left % Logo til venstre
+         %,sidebar % makes sidebar
+         ]{Frederiksberg}
+% nat for Science, ku for generic or unit=ics for DIKU
+% Tilføj style=simple for vandmærke
+\usepackage{pslatex}        % pæn skrift
+\usepackage[utf8]{inputenc} % Implementerer Unicode
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{color}
+\usepackage{minted}
+
+\title{Fagpakke i Machine Learning og Algoritmer}
+\subtitle{Programmering}
+\author{
+Arinbjörn Brandsson \\
+Benjamin Rotendahl  \\
+Andrea Charlie Stender Cordes \\
+Christopher Mulvad Groot\\
+}
+\date[]{\today}
+
+
+\begin{document}
+
+\frame[plain]{\titlepage}
+ \frame{\tableofcontents}
+
+\section{Program og Opsumering}
+
+\begin{frame}
+    \frametitle{Program for idag}
+    \begin{block}{Uge 1}
+        \begin{itemize}
+            \item Introduktion til algoritmer.
+            \item Algoritme design og metoder.
+            \item Hvordan man kan sammenligne forskellige løsninger.
+            \item Øvelser i algoritmer.
+        \end{itemize}
+    \end{block}
+    \begin{block}{Uge 2}
+        \begin{itemize}
+            \item \alert{Introduktion til Programmering.}
+            \item \alert{Programmerings øvelser.}
+        \end{itemize}
+    \end{block}
+    \begin{block}{Uge 3}
+        \begin{itemize}
+            \item Databehandling med Machine Learning.
+            \item Øvelser i dataanalyse.
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Programmering}
+        \begin{block}{Hvorfor skal vi kode?}
+            \begin{enumerate}
+                \item Vi kan bruge at computeren kan lave 10.240 millioner
+                      instructioner per sekund. \pause
+                \item Vi slipper for at håndkøre algoritmer \pause
+                \item Algoritmer kan testes og udføres med computerer effektivt \pause
+                \item Vi kan arbejde med data som mennesker ikke kan overskue \pause
+                \item Computeren har allerede vist sig over menneskelig i visse
+                situationer.
+            \end{enumerate}
+        \end{block}
+    \end{frame}
+
+
+ \section{Introduktion til python}
+     \frame{\tableofcontents[currentsection]}
+     \begin{frame}[t]{Hvorfor python?}
+         \begin{description}
+             \item[Høj niveaus sprog] Man skal ikke tænke på hvordan
+             maskinen fortolker det.
+             \pause
+             \item[Alsidigt] Bliver brugt mange steder,
+             fra webudvikling til kræftforskning
+             \pause
+             \item[Nemt at lære] Det har en simpel pæn syntax og er meget
+             tilgivende. Minder meget om pseudokode
+         \end{description}
+         \pause
+         \begin{block}{Minimums algoritmen}
+               \inputminted{python}{min.py}
+        \end{block}
+     \end{frame}
+
+     \begin{frame}{Matematik og variabler}
+         \vspace{-1em}
+         \begin{block}{Matematik}
+            \begin{itemize}
+                \item 3 + 14 \pause
+                \item 69 / 2 \pause
+                \item 21 * 2 \pause
+                \item 2 ** 2
+            \end{itemize}
+         \end{block}
+         \pause
+         \begin{block}{variabler}
+             \begin{itemize}
+                 \item pi  = 3.14
+                \pause \item liv = 40 + 2
+                \pause \item pi2 = pi * 2
+                \pause \item fornavn = ``Benjamin ~''
+                \pause \item efternavn = ``Rotendahl''
+                \pause \item mig = fornavn + efternavn
+                \pause \item harKage = True
+             \end{itemize}
+         \end{block}
+     \end{frame}
+
+    \begin{frame}{Funktioner og lister}
+        \begin{block}{lister}
+            \begin{description}
+                \item[lst = [1,2,3,4,5]] variablen ``lst'' er nu en liste med
+                tal. \pause
+                \item[nr = lst[0]] variablen nr er nu lig med det første tal i
+                listen. \pause
+                \item[lst.append (6)] listen er nu blevet en længere og det sidste
+                element er $6$.
+            \end{description}
+        \end{block}
+        \pause
+        \begin{block}{funktioner}
+            \begin{itemize}
+                \item mindst = min(lst)
+            \pause  \item forksel = max(lst) - min(lst)
+            \pause  \item print "hejsa"
+            \pause  \item prikprod(v, u)
+            \end{itemize}
+        \end{block}
+    \end{frame}
+
+
+    \begin{frame}[t]{kontrol udtryk}
+        \begin{block}{If statements}
+            Hvis $a$ så gør $b$. \\
+            Hvis $a$ så gør $b$ ellers gør $c$.
+        \end{block}
+        \begin{block}{Løkker}
+            \begin{itemize}
+                \item for i in range(0,10):
+                \pause \item for i in lst:
+                \pause \item while(point $<$ 100):
+            \end{itemize}
+    \end{block}
+    \end{frame}
+
+
+    \begin{frame}{Funktions definition}
+            \begin{block}{prikprodukt}
+                For vektoren $v$ og vektoren $u$ er prikproduktet defineret som
+                $$
+                    v_1 \cdot u_1 + v_2 \cdot u_2
+                $$
+                En funktion er en måde at genbruge sin kode på.
+            \end{block}
+                \pause
+            \begin{block}{Demo}
+                 Så er der live demo!
+            \end{block}
+    \end{frame}
+
+
+    \begin{frame}{Funktions definition}
+            \begin{block}{Fibonacci tal}
+                Det $n$'te fibonacci tal er defineret som
+                $$
+                    fib(n-1) + fib(n-2)
+                $$
+            \end{block}
+            \pause
+            \begin{block}{Demo}
+                 Den koder vi!
+            \end{block}
+    \end{frame}
+
+
+    \begin{frame}{Funktions definition}
+        \begin{block}{Fakultets funktionen}
+            Fakultetfunktionens af $n$ (typisk skrevet $n!$) er defineret som
+            $$
+                n * (n-1) * (n-2) * \dots * 1
+            $$
+        \end{block}
+
+        \begin{block}{Demo}
+             Den koder vi også!
+        \end{block}
+    \end{frame}
+
+    \begin{frame}{Hvad med et gætte spil?}
+         Vi ønsker at kode et lille spil hvor brugeren skal gætte
+         det tal computeren har valgt.
+
+        \begin{block}{Demo}
+            Den koder vi også!
+        \end{block}
+    \end{frame}
+
+    \section{Øvelser}
+    \begin{frame}[t]{Øvelsestid}
+        Kode øvelser i python!
+    \end{frame}
+    %--- Next Frame ---%
+
+\end{document}
