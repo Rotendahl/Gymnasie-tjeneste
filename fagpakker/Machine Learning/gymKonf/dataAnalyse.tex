@@ -1,4 +1,5 @@
 \documentclass[12pt,t]{beamer}
+%\documentclass[12pt,t,handout]{beamer}
 \usetheme{metropolis}
 \usepackage{listings} % Pakke til kode
 \usepackage{pslatex}        % pæn skrift
@@ -6,6 +7,7 @@
 \usepackage{algpseudocode}
 \usepackage{algorithm}
 \usepackage{marvosym}
+\usefonttheme{professionalfonts}
 \setbeamersize{description width=0.57cm}
 \metroset{block=fill}
 \title{IT fagene i de gymnasiale uddannelser}
@@ -22,30 +24,50 @@
 \frame{\titlepage}
 
 \begin{frame}[c]{Benjamin Rotendahl}
-    \begin{block}{Hvem er det?}
+    \begin{block}{Hvem er jeg?}
         \begin{itemize}
-            \item Kæmpe nørd. \pause
-            \item Datalogistuderende ved Københavns Univsersitet. \pause
-            \item Frivilig/studentermedhjælper/bestyrelsesmedlem i  Coding
+            \item Datalogistuderende ved Københavns Universitet. \pause
+            \item Frivillig/studentermedhjælper/bestyrelsesmedlem i  Coding
                   Pirates. \pause
-            \item Medlem af Datalogisk Instituts gymnasietjeneste.
+            \item Medlem af Datalogisk Instituts ved Københavns universitets
+                  gymnasietjeneste.\pause
+            \item Slides kan hentes her ``rotendahl.dk/slides.pdf'' \pause
         \end{itemize}
     \end{block}
 \end{frame}
 
+\begin{frame}[c]{Lynkursus i Machine Learning}
+        \begin{block}{Materiale}
+            Udrag fra en fagpakke der er udviklet for gymnasietjenesten ved
+            Datalogisk Institut Københavns Universitet.\\
+            Link : ``https://github.com/Rotendahl/Gymnasie-tjeneste''
+        \end{block}
+        \pause
+        \begin{block}{Undervisningsmetode}
+            \begin{itemize}
+                \item Materialet er svært. \pause
+                \item Learn by doing. \pause
+                \item Smagsprøve.
+            \end{itemize}
+        \end{block}
 
-\begin{frame}[c]{Programmet for idag}
+
+
+\end{frame}
+
+
+\begin{frame}[c]{Programmet for i dag}
         \begin{description}
             \item[\alert{Intro til Machine Learning}]~\\
-            Forklaring af de overorddne ideer og tanker bag machine learning
+            Forklaring af de overordnede ideer og tanker bag machine learning
 
             \pause
             \item[\alert{Perceptron algoritmen}]~\\
-            En simpel machine learning algortime bygget på vektorregning.
+            En simpel machine learning algoritme bygget på vektorregning.
 
             \pause
-            \item[\alert{Fremvising og øvelser i iPythone}]~\\
-            Interaktive øvelser i det fremragende iPython.
+            \item[\alert{Fremvisning og øvelser i iPython}]~\\
+            Interaktive øvelser i værktøjet iPython.
 
             \pause
             \item[\alert{Afrunding og spørgsmål}]~\\
@@ -76,7 +98,7 @@
 
     \begin{frame}[t]{Dagens øvelse}
         \begin{quote}
-            Vi er blevet hyret af et hospital da de har hørt at vi IT-folk
+            Vi er blevet hyret af et hospital da de har hørt at vi nørder 
             kan hjælpe deres patienter.
         \end{quote}
         \pause
@@ -95,24 +117,6 @@
         \centering Problemet kaldes \textbf{klassificering}, gode løsninger kan
         have stor indflydelse inden for mange felter.
     \end{frame}
-
-    \begin{frame}[t]{Eksempel}
-        \begin{block}{Kan Machine Learning bruges?}
-        \begin{description}
-            \item[\alert{Der ekisterer et mønster}]~\\
-            Kræftsvulsters udvikling er ikke tilfældig.
-
-            \pause
-            \item[\alert{Svært at finde en formel}]~\\
-            Der er støj i data'en og det er ikke konsekvent.
-
-            \pause
-            \item[\alert{Vi har data på problemet}]~\\
-            Data fra Washington state hospital.
-        \end{description}
-        \end{block}
-    \end{frame}
-
 
     \begin{frame}[c]{Formalisering}
         \begin{block}{Termer}
@@ -283,29 +287,63 @@
 \section{iPython og øvelser}
     \begin{frame}[t]{Øvelser}
         \begin{block}{iPython}
-            Online python fortokler, med mulighed for nemt og hurtigt at lave
-            opgaver til studerende. \\
+            Online python fortolker, med mulighed for nemt og hurtigt at lave
+            opgaver til studerende. \\ \pause
 
-            Gå ind på ``rotendahl.dk/vejle''
-                \pause
-                Redder vi så nogle liv?
-                \pause
-                Lad os kode det og se hvor god den er!
+            Gå ind på ``rotendahl.dk/vejle'' \\
+            \emph{kode:\alert{ DIKU}}
             \end{block}
     \end{frame}
 
-    \begin{frame}[t]{Afslutning}
-    \begin{block}{Hvor god er den? }
+    \section{Afslutning}
+    \begin{frame}[t]{Afrunding}
+    \begin{block}{Hvor god er den?}
         I opgaverne kigger i kun på \alert{25 eksempler!} og tester på 75
         patienter \\
         \pause
         I kan forvente at den har ret på cirka $60-70\%$ af patienterne!.\\
         \pause
-        Kører man den istedet med 500 eksempler og tester på 180. \pause
-        Rammer den rigtigt 181 gange og forkert 2 gange. Det betyder at den
+        Kører man den i stedet med 500 eksempler og tester på 180. \pause
+        Rammer den rigtigt 178 gange og forkert 2 gange. Det betyder at den
         har en succes rate på \alert{$98,9\%$!}
     \end{block}
     \pause
-    \centering Spørgsmål?\\
+    \end{frame}
+
+    \begin{frame}[t]{Emner inden for Machine Learning}
+        \begin{description}
+            \item[\alert{Matematikken bag}]~\\
+            Hvordan sikrer vi at den faktisk kan sige noget om virkeligheden?
+            ``https://work.caltech.edu/telecourse.html''
+            \pause
+            \item[\alert{Etiske spørgsmål}]~\\
+            Fordomme i data'en bliver lært, skal det være sådan? \\
+            Hvad betyder det at lære? ``rotendahl.dk/MLexcerpt''
+            \pause
+            \item[\alert{Automatisering}]~\\
+            Skal vi have grænser for hvilke jobs de må tage? \\
+            ``https://www.youtube.com/watch?v=7Pq-S557XQU''
+
+            \pause
+            \item[\alert{Guide til iPython}]~\\
+            Hvordan sætter man det op og hvor kan det ellers bruges til?
+            ``http://rotendahl.dk/iPython''
+        \end{description}
+    \end{frame}
+
+    \begin{frame}[c]{Spørgsmål}
+        \begin{block}{Links}
+        \begin{description}
+            \centering\item[Benjamin@Rotendahl.dk]
+            \item[rotendahl.dk/slides.pdf]
+        \end{description}
+        \end{block}
+
+        \begin{block}{}
+            \begin{description}
+            \centering\item[\alert{Tak for opmærksomheden}]
+            \item[\alert{Spørgsmål?}]
+        \end{description}
+        \end{block}
     \end{frame}
 \end{document}
