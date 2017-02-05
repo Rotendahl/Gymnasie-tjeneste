@@ -16,7 +16,7 @@
 \usepackage{algpseudocode}
 \usepackage{algorithm}
 
-\title{Sukkertoppen på DIKU}
+\title{Espergærde Gymnasium}
 \subtitle{Algoritmer og problemløsning}
 \author{
         Gymnasietjenesten på DIKU
@@ -28,13 +28,12 @@
 \begin{document}
 
 \frame[plain]{\titlepage}
- \frame{\tableofcontents}
 
 \section{Dagens program}
 
 \begin{frame}
     \frametitle{Program for idag}
-    \begin{block}{Indtil kl 11}
+    \begin{block}{Indtil kl 10}
         \begin{itemize}
             \item Algoritme design og metoder. \pause
             \item Hvordan man kan sammenligne forskellige løsninger. \pause
@@ -43,17 +42,17 @@
         \end{itemize}
     \end{block}
     \pause
-    \begin{block}{Fra 11.30 til 13.30}
+    \begin{block}{Fra 10.00 til 12.00}
         \begin{itemize}
+            \item Intro til Machine Learning \pause
             \item Intro til iPython \pause
-            \item Øvelser i Python
         \end{itemize}
     \end{block}
     \pause
-    \begin{block}{Fra 11.30 til 13.30}
+    \begin{block}{Fra 12.30 til 15.00}
         \begin{itemize}
-            \item Intro til Machine Learning \pause
-            \item Øvelser i Machine Learning
+            \item Perceptron \pause
+            \item K-means Clustering
         \end{itemize}
     \end{block}
 \end{frame}
@@ -383,55 +382,6 @@
           Snak lidt om hvordan det kunne gøre smart
       \end{exampleblock}
     \end{frame}
-
-    \begin{frame}[plain]{Zig-Zag sekvens}
-        \begin{block}{Beskrivelse}
-          Ejeren af et supermarked har fået en ny stor ølhylde, nu vil han gerne
-          gøre den pæn. Han har placeret sine øl i alfabetisk orden, men højden
-          på flaskerne afviger. Han er nu intereseret i at finde den længste
-          sekvens af øl der skifter mellem lav og høj en såkaldt Zig-Zag sekvens.
-          Så $(15,10,17)$ er sådan en sekvens mens $(1,2,3)$ ikke er.
-
-          Vi skal lave en algoritme der bestemmer sådan en sekvens.\\
-          \textbf{Input:} $n$ øl flaskers højde $n_1, n_2, \dots$. \\
-          \textbf{Output:} Den længst mulige Zig-Zag sekvens.
-        \end{block}
-    \end{frame}
-
-    \begin{frame}
-      \begin{columns}
-          \begin{column}{0.5\textwidth}
-              \begin{block}{Eksempel}
-                \begin{itemize}
-                    \item Input : $(6, 1, 7, 7, 2, 4, 7)$
-                    \item Output : $(6,1,7,2,7)$
-                \end{itemize}
-              \end{block}
-          \end{column}
-          \begin{column}{0.5\textwidth}
-              \begin{block}{Figur}
-                \includegraphics[scale=0.3]{oel.png}
-              \end{block}
-          \end{column}
-      \end{columns}
-        I må gerne fjerne flasker men ikke bytte rundt på dem, beskriv en metode
-        til at bestemme den her sekvens og tænk over hvor effektivt den er.
-    \end{frame}
-
-
-    \begin{frame}{Primtal}
-      \begin{block}{Mål}
-      Skriv en algoritme der finder det $n$'te primtal --- prøv at gør den så
-      hurtig som mulig.
-      \end{block}
-      \pause
-
-      \begin{exampleblock}{Eksempel}
-      Find det femte primtal. Algoritmen skal gerne returnere 11.
-      \end{exampleblock}
-    \end{frame}
-
-
 
     \section{Opsamling og Spørgsmål}
         \begin{frame}[c]{Spørgsmål}
