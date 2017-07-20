@@ -6,21 +6,28 @@ følge.
 
 
 ## IT-sikkerhed
+(Skriver Benjamin om)
 
 
 ## Algoritmer
 
 
 ## Machine Learning
+(Skriver Christoffer om)
+
 
 
 ## Projektledelse
 
 
+
 ## Interaktionsdesign
 
 
+
 ## Information Retrieval
+(Skriver Christoffer om)
 
 
 ## Kompleksitetsteori
+(Skriver Benjamin om)
