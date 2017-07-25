@@ -9,6 +9,7 @@ følge.
 Dette oplæg retter sig til folk der skriver i matematik A og informatik. 
 
 Oplægget kommer ind på 2 emner. 
+
     * Kryptering: 
       Med moderne kryptering kan to mennekser der aldrig har mødt hinanden 
       snakke sammen sådan at en trejdepart der lytter med ikke kan forstå
