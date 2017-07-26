@@ -56,11 +56,22 @@ forskellige fremgangsmåder indeholder.
 
 
 ## Projektledelse
-
+At styre et størrere IT-projekt er ikke altid lige nemt, og IT projekter variere 
+meget fra andre typer projekter, I at man ikke kan detaljestyre udviklingen på 
+samme niveau som de fleste er vandt til indenfor projektledelse. Dette, og andet, 
+leder til et antal meget gennemgående faldgrupper, som kan ungås hvis man kender
+til dem. Vi vil under dette emne gennemgå nogle af de mest benyttede typer af 
+projektledelse indenfor IT, og der hvor der oftest sker fejl. Med specifikt 
+henblik på offentlige fejlfyldte IT projekter såsom Rejsekortet, vil vi sætte
+fokus på hvor det gik galt, og hvad de kunne have gjort anderledes.
 
 
 ## Interaktionsdesign
-
+Interaktionsdesign er disciplinen indenfor IT udvikling, som sørger for at mennesker 
+kan benytte dine produkter som tiltænkt. Vi vil under dette emne gennemgå en række 
+basisprincipper indenfor interaktionsdesign, og lærer jer hvordan I benytter dem. 
+Dette inkludere test af produkter, spørgeskemaer og analyse af websider med fokus 
+på brugervenlighed.
 
 
 ## Information Retrieval
