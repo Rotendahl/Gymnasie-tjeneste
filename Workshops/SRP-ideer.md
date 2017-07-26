@@ -33,7 +33,23 @@ Oplægget kommer ind på 2 emner.
 
 
 ## Algoritmer
+Dette oplæg retter sig til folk der skriver i matematik A og informatik.
 
+Algoritmer kan beskrives som en slags "opskrift" til hvordan man løser et 
+givet problem. Dette gør at vores hverdag er fyldt med algoritmer, især 
+på internettet. Oplægget vil specifikt omhandle:
+
+    * Pseudokode:
+      Den første del af oplægget vil vise hvordan notationen for algoritmer 
+      ser ud, og hvordan man skriver en algoritme.
+
+    * Bevisførelse:
+      Den anden del af oplægget vil fokusere på hvordan man beviser en 
+      algoritmes korrekthed og køretid. Dette er vigtigt når man har flere 
+      løsninger til det samme problem, og man skal finde den bedste løsning.
+
+Programmeringserfaring er ikke påkrævet, men vil hjælpe på forståelsen af den 
+første del af oplægget.
 
 ## Machine Learning
 (Skriver Christoffer om)
