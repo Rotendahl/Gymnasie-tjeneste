@@ -25,11 +25,6 @@ Oplægget kommer ind på 2 emner.
 
 
 
-
-## IT-sikkerhed
-
-
-
 ## Algoritmer
 Dette oplæg retter sig til folk der skriver i matematik A og informatik.
 
@@ -80,5 +75,9 @@ beskriver.
 
 
 
-## Kompleksitetsteori
-(Skriver Benjamin om)
+## Teoretisk datalogi
+Oplægget her handler om hvilke begrænsninger computere har, f.eks hvilke
+problemer kan en computer ikke løse. Hvad kan DNA og kvante computere som
+normale computere ikke kan.
+Oplægget vil komme ind på hvordan man kategoriserer problemer og analyserer
+deres løsninger.
