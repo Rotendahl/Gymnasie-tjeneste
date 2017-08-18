@@ -42,7 +42,35 @@ Oplægget kommer ind på 2 emner.
       hvor svære de er at knække. 
 
 
+## Machine learning - Stance detection
+Dette oplæg vil rette sig mod studerende der vælger at skrive i matematik eller informatik.
+Det er ikke et krav at man har nogen programmerings erfaring, dog vil vi i dette oplæg, overordnet,
+gå igennem et kode eksempel for bedre at illustrerer "Stance detection". Dette bliver dog taget på
+et højt abstractions nivoue så alle bør kunne følge med. 
 
+Oplægget kommer ind på:
+
+
+    * Machine learning:
+      At få en maskine til at lære af sine fejl og derved forbedre sig er 
+      en fantastisk evne som mange programmer og systemer bruger i forskellige
+      afskygninger den dag i dag, alt fra google til netflix. Vi vil i dette 
+      oplæg fokusere på et aspekt af machine learning kaldet "Stance Detection.
+
+    * Stance Detection:
+      At kende den brede befolknings holdninger og meninger omkring bestemte emner 
+      er vigtigt redskab for såevel virksomheder som regeringer. Vi ser derfor mange
+      mennings måleringer foretaget af diverse organizationer. Disse er dog typisk
+      begrændset da de kun kan fortages over et udtag af den samlede befolkning, 
+      men hvad hvis vi kunne bruge de sociale medier til at danne os et overblik, 
+      hvis vi kunne analysere f.eks. massevis af tweets? 
+      
+      Stance detection er måde hvorpå vi kan programmer og træne en maskine til at 
+      analysere en tekst streng og give et bud på forfatterens holdning til det omskrevne emne.
+      Vi vil derfor gennemgå hvordan man kan automatisere analyse af holdninger i diverse tweets
+      angående et bestemt emne, samt hvorledes vi kan træne vores system (machine learning) til
+      at give mere kvalificerede bud. Vejen til et kvalificeret bud er dog lang og hullet, 
+      vi vil derfor også gennemgå nogle faldgrupper som et ellers lærenemt program kan falde i.  
 
 
 # Praktisk information:
