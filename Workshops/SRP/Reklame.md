@@ -72,6 +72,25 @@ Oplægget kommer ind på:
       at give mere kvalificerede bud. Vejen til et kvalificeret bud er dog lang og hullet, 
       vi vil derfor også gennemgå nogle faldgrupper som et ellers lærenemt program kan falde i.  
 
+## Algoritmer
+Dette oplæg er rettet mod studerende der vælger at skrive i matematik eller informatik.
+Programmeringserfaring er ikke påkrævet, men vil hjælpe på forståelsen af emnet.
+
+Oplægget kommer ind på:
+
+
+    * Pseudokode:
+      Hvordan vi formelt beskriver algoritmer er vigtigt for hvordan vi laver beviser (beskrevet nedenunder). Denne del af oplægget vil derfor fokusere  på hvad konventionen for at skrive i pseudokode er.
+
+    * Algoritmer - Introduktion:
+      Efter vi ved hvordan man kan beskrive algoritmer, vil vi diskutere, ud fra kendte eksempler, hvilken forskellige metoder der bruges i algoritmer.
+
+    * Bevisførelse - Korrekthed:
+      Når man har beskrevet en algoritme, skal man kunne bevise for andre at den algoritme man har udarbejdet gør det som man påstår den gør. Denne del af oplægget fokuserer på hvordan man laver et korrekthedsbevis
+
+    * Bevisførelse - Køretider:
+      Selv hvis man har skrevet en ny algoritme, er mange algoritmer ikke særlig brugbare grundet de tager for lang tid til at opnå et brugbart resultat. Denne del af oplægget fokuserer på hvilken forskellige slags køretider der eksisterer, samt hvordan man kan bevise dem.
+
 
 # Praktisk information:
 det foregår onsdag i efteråersferien
