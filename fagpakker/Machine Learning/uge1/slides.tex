@@ -31,36 +31,35 @@
 \frame[plain]{\titlepage}
  \frame{\tableofcontents}
 
-\section{Forløbets program}
+\section{Programmet}
 
 \begin{frame}
-    \frametitle{Program for de kommende uger}
-    \begin{block}{Uge 1}
+    \frametitle{Program for i dag}
+    \begin{block}{Program}
         \begin{itemize}
-            \item Introduktion til algoritmer.
-            \item Algoritme design og metoder.
-            \item Hvordan man kan sammenligne forskellige løsninger.
-            \item Øvelser i algoritmer.
-        \end{itemize}
-    \end{block}
-    \pause
-    \begin{block}{Uge 2}
-        \begin{itemize}
-            \item Introduktion til Programmering.
-            \item Programmerings øvelser.
-        \end{itemize}
-    \end{block}
-    \pause
-    \begin{block}{Uge 3}
-        \begin{itemize}
-            \item Databehandling med Machine Learning.
-            \item Øvelser i dataanalyse.
+            \item 09:00-10:30 : Algoritme Oplæg og Øvelser
+            \item 10:30-10:45 : Pause
+            \item 10:45-12:15 : Programmering Oplæg og Øvelser
+            \item 12:15-12:45 : Pause
+            \item 12:45-14:30 : Machine Learning Oplæg og Øvelser
+            \item 14:30-15:00 : Social Oplæg og Spørgsmål 
         \end{itemize}
     \end{block}
 \end{frame}
 
 
 \section{Introduktion til algoritmer}
+    \begin{frame}{Algoritmer}
+    \begin{block}{Dette Oplæg vil Dække:}
+        \begin{itemize}
+            \item Introduktion til algoritmer
+            \item Algoritme design og metoder
+            \item Hvordan man kan sammenligne forskellige løsninger
+            \item Øvelser i algoritmer
+        \end{itemize}
+    \end{block}
+    \end{frame}
+
     \begin{frame}[c]{Hvad er en Algoritme?}
         \begin{quote}
             An algorithm is a self-contained step-by-step set of operations to
@@ -116,7 +115,7 @@
     \end{frame}
 
     \begin{frame}[t]{Eksempler på algoritmer}
-        Algoritmer bruges inden for alle former for problemløsnings. \pause
+          Algoritmer bruges inden for alle former for problemløsning. \pause
         \begin{block}{Bioinformatik}
             \emph{Longest commen subsequence: } Sammenligning af DNA strenge
             for at se hvor beslægtet to strenge er. \pause
@@ -136,7 +135,7 @@
 
 \section{Algoritme vs Algoritme}
     \begin{frame}[t]{Valget af algoritme}
-        \begin{exampleblock}{Soterings algoritmer}
+        \begin{exampleblock}{Sorterings algoritmer}
             Givet en liste af $n$ tal ønsker vi at returnere en sorteret liste
             af længde $n$.
         \end{exampleblock}
@@ -186,7 +185,7 @@
         \end{block}
         \pause
         \begin{exampleblock}{Algoritme for minimums funktionen}
-            Givet en liste $X = [x_1,x_2,\dots,x_n]$ ønsker vi at returnere det
+            Givet en liste usorteret $X = [x_1,x_2,\dots,x_n]$ ønsker vi at returnere det
             mindste tal i listen. Hvad er algoritmen og hvad er køretiden?
         \end{exampleblock}
     \end{frame}
@@ -215,6 +214,7 @@
             \centering Er den optimal? \pause \alert{Jeps!}
         \end{block}
     \end{frame}
+
 
     \begin{frame}[t]{Eksempler på køretid}
         \vspace{-2em}
@@ -263,6 +263,112 @@
         \end{block}
     \end{frame}
 
+% Eksempel 2
+    \begin{frame}{Fibonacci}
+    \begin{exampleblock}{Algoritme for at finde et Fibonacci Tal}
+        Givet et tal n, vil vi gerne finde det n'te Fibonacci tal i 
+        Fibonacci rækken ($[1, 1, 2, 3, 5, 8, 13, 21, ...]$). For eksempel, 
+        hvis vi giver som input $6$, skal algoritmen returnere $13$.
+    \end{exampleblock}
+    \begin{block}{En løsning}
+        En mulig løsning: Divide and Conquer, ved brug af rekursion.\pause\\
+        \begin{itemize}
+        \item Divide and Conquer: Split problemet op i mindre dele som er nemme at 
+              løse, og opsaml problemerne efterfølgende
+        \pause
+        \item Rekursion: En funktion der på et tidspunkt kalder sig selv igen.
+        \end{itemize}
+        \pause
+    \end{block}
+    \end{frame}
+
+    \begin{frame}{Fibonacci (cont.)}
+    \begin{block}{Observation:}
+    For at finde det n'te Fibonacci tal, skal vi finde det (n-1)'te og (n-2)'te 
+    Fibonacci tal
+    \end{block}
+    \pause
+        \begin{block}{Algoritmen}
+        \vspace{-1.5em}
+        \begin{algorithm}[H]
+            \caption{\newline Input: Et tal, n
+                     \newline Ouput: Det n'te Fibonacci tal
+            }
+            \begin{algorithmic}
+                \Function{fib}{n}
+                    \If{n is 0 or 1}
+                        ~\Return 1
+                    \Else
+                        ~\Return \Call{fib}{n-1} + \Call{fib}{n-2}
+                    \EndIf
+                \EndFunction
+            \end{algorithmic}
+        \end{algorithm}
+        \end{block}
+    \end{frame}
+
+    \begin{frame}{Køretid}
+        \begin{block}{Køretiden}
+            Vi kan illustrere udregningen af fibonacci tal som et binært træ:
+            \pause
+            {\center
+            \includegraphics[scale=0.5]{include/fib.png}
+            }
+            \pause
+
+            Et binært træ kan indeholde maksimalt $2^n$ blade, så køretiden er $O(2^n)$.
+        \end{block}
+    \end{frame}
+
+    \begin{frame}{Effektivitet}
+        \begin{block}{Effektivitet}
+            \begin{itemize}
+            \item Køretiden er på $O(2^n)$. Er dette optimalt? \pause \alert{Nope!} \pause
+            \item Den nuværende algoritme laver rigtig mange genberegninger - dette er 
+            ikke særlig effektivt. \pause
+            \item Ny idé: Vi regner Fibonacci tallene fra start, og gemmer de foregående 
+            resultater (Dynamic Programming)
+            \end{itemize}
+        \end{block}
+    \end{frame}
+
+    \begin{frame}{Algoritmen}
+        \vspace{-1em}
+        \begin{exampleblock}{Algoritmen}
+        \vspace{-1.5em}
+        \begin{algorithm}[H]
+            \caption{\newline Input: Et tal, n
+                     \newline Ouput: Det n'te Fibonacci tal
+            }
+            \begin{algorithmic}
+                \Function{fib}{n}
+                    \State counter     = 2
+                    \State fib1        = 1
+                    \State fib2        = 1
+                    \While{counter $\leq$ n}
+                        \State temp = fib1 + fib2
+                        \State fib2 = fib1
+                        \State fib1 = temp
+                        \State counter = counter + 1
+                    \EndWhile\\
+                    \Return fib1
+                \EndFunction
+            \end{algorithmic}
+        \end{algorithm}
+        \end{exampleblock}
+    \end{frame}
+
+    \begin{frame}{Køretid og Effektivitet}
+        \begin{block}{Køretid}
+            I denne version regner vi fra de første Fibonacci tal op til det 
+            n'te. Hvad er vores køretid så? \pause $O(n)$. Er dette optimalt? 
+            \pause \alert{Jah!} 
+        \end{block}
+        \pause
+        \begin{block}{Effektivitet}
+            Demonstration!
+        \end{block}
+    \end{frame}
 
 \section{Øvelser}
         \begin{frame}[t]{Øvelser}
@@ -304,18 +410,6 @@
       \end{exampleblock}
     \end{frame}
 
-    \begin{frame}
-      \frametitle{Implementering af sorteringsmetode}
-      \begin{block}{Mål}
-      Skriv en algoritme for Bubble Sort.
-      \end{block}
-      \pause
-
-      \begin{exampleblock}{Eksempel}
-      Tavledemonstration!
-      \end{exampleblock}
-    \end{frame}
-
     \begin{frame}{Primtal}
       \begin{block}{Mål}
       Skriv en algoritme der finder det $n$'te primtal - prøv at gør den så
@@ -325,6 +419,19 @@
 
       \begin{exampleblock}{Eksempel}
       Find det femte primtal. Algoritmen skal gerne returnere 11.
+      \end{exampleblock}
+    \end{frame}
+
+    \begin{frame}{Korteste Vej}
+      \begin{block}{Mål}
+        Betragt grafen nedenunder, hvor tallene ved hver kant repræsenterer 
+        en distance. Beskriv en algoritme som finder den korteste vej imellem 
+        to noder.
+      \end{block}
+      \includegraphics{shortest.png}
+      \begin{exampleblock}{Eksempel}
+        Hvis vi gerne vil finde den korteste vej imellem A og F, skal jeres 
+        løsning returnere vejen A-$>$B-$>$F, med vægt på 58.
       \end{exampleblock}
     \end{frame}
 
