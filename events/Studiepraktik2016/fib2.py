@@ -1,7 +1,5 @@
 import time
 
-
-
 def fib(n):
     fibs = [1,1]
     while(len(fibs) < n):
