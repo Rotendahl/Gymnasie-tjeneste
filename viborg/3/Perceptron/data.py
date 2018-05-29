@@ -220,6 +220,6 @@ def calcError(w):
             err[0] += 1
         else:
             err[1] += 1
-    print "Algoritmen ramte forkert: ", err[0], " gange"
-    print "Algoritmen ramte rigtigt: ", err[1], " gange"
-    print "Det giver en succesrate paa ", float(err[1])/(len(xs)) * 100
+    print("Algoritmen ramte forkert:  " + str(err[0]) + " gange")
+    print("Algoritmen ramte rigtigt: " + str(err[1]) + " gange")
+    print("Det giver en succesrate paa " + str(float(err[1])/(len(xs)) * 100))
