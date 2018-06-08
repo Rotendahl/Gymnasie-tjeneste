@@ -9,3 +9,5 @@ latexOut/
 *.out
 *.toc
 *.snm
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
