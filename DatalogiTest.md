@@ -1,3 +1,5 @@
+Kilde: http://cs.au.dk/erdudatalog/
+
 ## Spørgsmål 1
 Et CPR-nummer er som bekendt af formen DDMMÅÅ-XXXX, hvor XXXX er et løbenummer.
 En kontrolsum gør, at kun ca. 5,4% af løbenumrene er gyldige.
